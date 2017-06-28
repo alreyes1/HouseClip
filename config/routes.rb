@@ -6,7 +6,7 @@ Rails.application.routes.draw do
    						:path => '',
    						:path_names => {:sign_in => 'login', :sign_out => 'logout', :edit => 'profile'},
    						:controllers => {:omniauth_callbacks => 'omniauth_callbacks',
-                                :registrations => 'registrations'
+                                #:registrations => 'registrations'
                               }
 
   resources :users, only: [:show]
@@ -15,6 +15,10 @@ Rails.application.routes.draw do
 
   resources :rooms do
     resources :reservations, only: [:create]
+  end
+
+  resources :conversations, only: [:index, :create] do
+      resources :messages, only: [:index, :create]
   end
 
   get '/preload' => 'reservations#preload'
