@@ -8,7 +8,7 @@
       				<%= link_to "Send Message", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', class: "btn btn-primary wide" %>
           </div>
       <% end %>
-      
+
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">Verification</div>
@@ -29,6 +29,7 @@
     <h4>Listings (<%= @rooms.length %>)</h4><br>
 
     <div class="row">
+
       <% @rooms.each do |room| %>
         <div class="col-md-4">
           <div class="panel panel-default">
@@ -41,7 +42,30 @@
           </div>
         </div>
       <% end %>
+
     </div>
+
+    <h4>Reviews</h4><br>
+
+    <% @rooms.each do |room| %>
+      <% if !room.reviews.blank? %>
+
+        <% room.reviews.each do |review| %>
+         <div class="row">
+           <div class="col-md-2 text-center">
+             <%= image_tag avatar_url(review.user), class: "img-circle avatar-medium" %><br>
+             <%= review.user.fullname %>
+           </div>
+           <div class="col-md-10">
+             <%= link_to room.listing_name, room %><br>
+             <%= review.comment %><br>
+             <%= review.created_at.strftime("%v") %>
+           </div>
+         </div>
+        <%end%>
+
+      <%end%>
+    <%end%>
 
   </div>
 </div>
