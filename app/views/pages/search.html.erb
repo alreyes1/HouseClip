@@ -2,6 +2,27 @@
 
   <div id="sidebar">
     <div id="widget" class="sticky">
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1XEDHM32q1GBFywDICjLpca_f8EM9ZWs&callback=initMap"></script>
+
+      <script type="text/javascript">
+          function initMap() {
+            <% if @arrRooms.length > 0 %>
+          var uluru = {lat: <%= @arrRooms[0].latitude %>, lng: <%= @arrRooms[0].longitude %>};
+          <% else %>
+          var uluru = {lat: 33.7499365, lng: -84.432715};
+          <% end %>
+          map = new google.maps.Map(document.getElementById('widget'), {
+          zoom: 15,
+          center: uluru
+          });
+          <% @arrRooms.each do |room| %>
+          var marker = new google.maps.Marker({
+          position: uluru, title: "<%= room.listing_name %>",
+          map: map
+          });
+          <% end %>
+          }
+        </script>
 
     </div>
   </div>
@@ -9,6 +30,8 @@
   <div id="article">
 
     <div class="row">
+
+      <div class="col-md-12">
       <%= search_form_for @search, url: search_path do |f| %>
 
         <div class="row">
@@ -98,7 +121,7 @@
       <div class="row">
         <% @arrRooms.each do |room| %>
 
-          <div class="col-md-4">
+          <div class="col-md-6">
             <div class="panel panel-default">
               <div class="panel-heading preview">
                 <%= image_tag room.photos[0].image.url(:medium) if room.photos.length > 0 %>
@@ -112,7 +135,7 @@
         <% end %>
       </div>
 
-
+    </div>
 
     </div>
 
@@ -142,3 +165,25 @@
     });
   });
 </script>
+ <script>
+    $(funciton(){ //doc ready
+
+      if (!!$('.sticky').offset()) { //make sure ".sticky" element exist
+        var stickyTop = $('.sticky').offset().top; // returns number
+        $(window).scroll(function(){ // scroll event
+          var windowTop = $(window).scrollTop(); //return number
+
+          if (stickyTop < windowTop){
+            $('.sticky').css({ position: 'fixed', top: 0 });
+          }
+          else {
+            $('.sticky').css('position', 'static');
+          }
+
+        });
+
+      }
+
+    });
+
+ </script>
