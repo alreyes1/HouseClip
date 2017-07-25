@@ -4,25 +4,31 @@
     <div id="widget" class="sticky">
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1XEDHM32q1GBFywDICjLpca_f8EM9ZWs&callback=initMap"></script>
 
-      <script type="text/javascript">
-          function initMap() {
+      <script>
+        function initMap() {
+          var mapCanvas = document.getElementById('widget');
+          var mapOptions = {
             <% if @arrRooms.length > 0 %>
-          var uluru = {lat: <%= @arrRooms[0].latitude %>, lng: <%= @arrRooms[0].longitude %>};
-          <% else %>
-          var uluru = {lat: 33.7499365, lng: -84.432715};
-          <% end %>
-          map = new google.maps.Map(document.getElementById('widget'), {
-          zoom: 15,
-          center: uluru
-          });
-          <% @arrRooms.each do |room| %>
-          var marker = new google.maps.Marker({
-          position: uluru, title: "<%= room.listing_name %>",
-          map: map
-          });
-          <% end %>
+              center: new google.maps.LatLng(<%= @arrRooms[0].latitude %>, <%= @arrRooms[0].longitude %>),
+            <% else %>
+              center: new google.maps.LatLng(33.744939, -84.389858),
+            <% end %>
+            zoom: 14,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
           }
-        </script>
+          var map = new google.maps.Map(mapCanvas, mapOptions);
+
+          <% @arrRooms.each do |room| %>
+            var marker = new google.maps.Marker({
+              position: new google.maps.LatLng(<%= room.latitude %>, <%= room.longitude %>),
+              title: "<%= room.listing_name %>"
+            });
+
+            marker.setMap(map);
+          <% end %>
+        }
+
+      </script>
 
     </div>
   </div>
@@ -165,25 +171,34 @@
     });
   });
 </script>
- <script>
-    $(funciton(){ //doc ready
+<div class="sticky-stopper"></div>
+<script>
+$( document ).ready(function() {
+console.log( "document ready!" );
 
-      if (!!$('.sticky').offset()) { //make sure ".sticky" element exist
-        var stickyTop = $('.sticky').offset().top; // returns number
-        $(window).scroll(function(){ // scroll event
-          var windowTop = $(window).scrollTop(); //return number
+var $sticky = $('.sticky');
+var $stickyrStopper = $('.sticky-stopper');
+if (!!$sticky.offset()) { // make sure ".sticky" element exists
 
-          if (stickyTop < windowTop){
-            $('.sticky').css({ position: 'fixed', top: 0 });
-          }
-          else {
-            $('.sticky').css('position', 'static');
-          }
+var generalSidebarHeight = $sticky.innerHeight();
+var stickyTop = $sticky.offset().top;
+var stickOffset = 0;
+var stickyStopperPosition = $stickyrStopper.offset().top;
+var stopPoint = stickyStopperPosition - generalSidebarHeight - stickOffset;
+var diff = stopPoint + stickOffset;
 
-        });
+$(window).scroll(function(){ // scroll event
+var windowTop = $(window).scrollTop(); // returns number
 
-      }
+if (stopPoint < windowTop) {
+$sticky.css({ position: 'absolute', top: diff });
+} else if (stickyTop < windowTop+stickOffset) {
+$sticky.css({ position: 'fixed', top: stickOffset });
+} else {
+$sticky.css({position: 'absolute', top: 'initial'});
+}
+});
 
-    });
-
- </script>
+}
+});
+</script>

@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   devise_for 	:users,
-   						:path => '',
-   						:path_names => {:sign_in => 'login', :sign_out => 'logout', :edit => 'profile'},
-   						:controllers => {:omniauth_callbacks => 'omniauth_callbacks',
-                                #:registrations => 'registrations'
-                              }
+  						:path => '',
+  						:path_names => {:sign_in => 'login', :sign_out => 'logout', :edit => 'profile'},
+  						:controllers => {:omniauth_callbacks => 'omniauth_callbacks',
+  														 #:registrations => 'registrations'
+  														}
 
   resources :users, only: [:show]
   resources :rooms
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
 
   resources :conversations, only: [:index, :create] do
-      resources :messages, only: [:index, :create]
+    resources :messages, only: [:index, :create]
   end
 
   resources :rooms do
@@ -31,9 +31,9 @@ Rails.application.routes.draw do
   get '/your_trips' => 'reservations#your_trips'
   get '/your_reservations' => 'reservations#your_reservations'
 
-  post '/notify' => 'reseervations#notify'
+  post '/notify' => 'reservations#notify'
   post '/your_trips' => 'reservations#your_trips'
 
-  get '/search' =>'pages#search'
+  get '/search' => 'pages#search'
 
- end
+end

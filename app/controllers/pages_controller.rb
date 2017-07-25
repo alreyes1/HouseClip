@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @rooms = Room.all
+    @rooms = Room.limit(3)
   end
 
   def search
@@ -38,7 +38,7 @@ class PagesController < ApplicationController
           start_date, end_date
         ).limit(1)
 
-        if not_available.lenght > 0
+        if not_available.length > 0
           @arrRooms.delete(room)
         end
       end
