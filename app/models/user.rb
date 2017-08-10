@@ -24,6 +24,7 @@ class User < ActiveRecord::Base
           user.email = auth.info.email
           user.image = auth.info.image
           user.password = Devise.friendly_token[0,20]
+          user.skip_confirmation!
       end
     end
   end
