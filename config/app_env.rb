@@ -1,7 +1,7 @@
 #Amazon AWS s3 info
   ENV['bucket'] = 'houseclip'
-  ENV['access_key_id'] = 'AKIAIX7HRAKYQQ6K6EAA'
-  ENV['secret_access_key'] = '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'
+  ENV['access_key_id'] = 'AKIAJT4EBT6FVXK2LPPA'
+  ENV['secret_access_key'] = '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'
   ENV['s3_region'] = 'us-east-1'
 
 #Mandrill info
