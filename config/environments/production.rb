@@ -70,10 +70,11 @@ Rails.application.configure do
     password: 'u75WDV0LJFT5_Ss58pfMqw',
     authentication: 'login'
   }
+  #paperclip S3
   config.paperclip_defaults = {
     storage: :s3,
     path: ':class/:attachment/:id/:style/:filename',
-    s3_host_name: 's3-us-east-1.amazonaws.com',
+    #s3_host_name: 's3-us-east-1.amazonaws.com',
     s3_credentials: {
       bucket: 'houseclip',
       access_key_id: 'AKIAIX7HRAKYQQ6K6EAA',
