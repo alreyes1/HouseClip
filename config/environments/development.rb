@@ -59,6 +59,18 @@ Rails.application.configure do
     password: 'u75WDV0LJFT5_Ss58pfMqw',
     authentication: 'login'
   }
+  config.paperclip_defaults = {
+    storage: :s3,
+    path: ':class/:attachment/:id/:style/:filename',
+    s3_host_name: 's3-us-east-1.amazonaws.com',
+    s3_credentials: {
+      bucket: 'houseclip',
+      access_key_id: 'AKIAIX7HRAKYQQ6K6EAA',
+      secret_access_key: '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',
+      s3_region: 'us-east-1'
+
+      }
+    }
 
 
   # Use an evented file watcher to asynchronously detect changes in source code,

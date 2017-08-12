@@ -61,6 +61,28 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default_url_options = { host: 'houseclip.properties' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.mandrillapp.com',
+    port:587,
+    enable_starttls_auto: true,
+    user_name: 'houseclip',
+    password: 'u75WDV0LJFT5_Ss58pfMqw',
+    authentication: 'login'
+  }
+  config.paperclip_defaults = {
+    storage: :s3,
+    path: ':class/:attachment/:id/:style/:filename',
+    s3_host_name: 's3-us-east-1.amazonaws.com',
+    s3_credentials: {
+      bucket: 'houseclip',
+      access_key_id: 'AKIAIX7HRAKYQQ6K6EAA',
+      secret_access_key: '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',
+      s3_region: 'us-east-1'
+
+      }
+    }
+
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
