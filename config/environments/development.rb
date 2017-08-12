@@ -52,11 +52,11 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.mandrillapp.com',
+    address: ENV['address'],
     port:587,
     enable_starttls_auto: true,
-    user_name: 'houseclip',
-    password: 'u75WDV0LJFT5_Ss58pfMqw',
+    user_name: ENV['user_name'],
+    password: ENV['password'],
     authentication: 'login'
   }
   #paperclip S3
@@ -65,10 +65,10 @@ Rails.application.configure do
     path: ':class/:attachment/:id/:style/:filename',
     #s3_host_name: 's3-us-east-1.amazonaws.com',
     s3_credentials: {
-      bucket: == ENV['bucket'],
-      access_key_id: == ENV['access_key_id'],
-      secret_access_key: == ENV['secret_access_key'],
-      s3_region: == ENV['s3_region']
+      bucket: ENV['bucket'],
+      access_key_id: ENV['access_key_id'],
+      secret_access_key: ENV['secret_access_key'],
+      s3_region: ENV['s3_region']
       }
     }
 
