@@ -18,3 +18,4 @@
 
 # Ignore ENV files
 /config/app_env.rb
+/config/local_env.yml

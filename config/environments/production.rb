@@ -63,11 +63,11 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'houseclip.properties' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: ENV['address'],
+    address: ENV['MandrillAddress'],
     port:587,
     enable_starttls_auto: true,
-    user_name: ENV['user_name'],
-    password: ENV['password'],
+    user_name: ENV['Mandrilluser_name'],
+    password: ENV['Mandrillpassword'],
     authentication: 'login'
   }
   #paperclip S3
