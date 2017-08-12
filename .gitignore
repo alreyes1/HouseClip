@@ -17,4 +17,4 @@
 .byebug_history
 
 # Ignore ENV files
-/locales/app_env.rb
+/config/app_env.rb
