@@ -1,5 +1,5 @@
-<div class="panel panel-default">
-  <div class="panel-body">
+<!--div class="panel panel-default">
+  <div class="panel-body"-->
 
     <!-- image -->
     <div class="row">
@@ -164,7 +164,25 @@
         </div>
         <hr>
 
+        <!-- Close by Rooms -->
+        <div class="row">
+          <h3>Near by</h3>
+          <% for room in @room.nearbys(10) %>
 
+            <div class="col-md-4">
+              <div class="panel panel-default">
+                <div class="panel-heading preview">
+                  <%= image_tag room.photos[0].image.url(:small) %>
+                </div>
+                  <div class="panel-body">
+                    <%= link_to room.listing_name, room %> <br>
+                    (<%= room.distance.round(2) %> miles away)
+                  </div>
+              </div>
+            </div>
+
+          <% end %>
+        </div>
 
 
 
@@ -199,30 +217,12 @@
 
 
 
-    <!-- Close by Rooms -->
-    <h3>Near by</h3>
-    <div class="row">
-      <% for room in @room.nearbys(10) %>
-
-        <div class="col-md-4">
-          <div class="panel panel-default">
-            <div class="panel-heading preview">
-              <%= image_tag room.photos[0].image.url(:medium) %>
-            </div>
-              <div class="panel-body">
-                <%= link_to room.listing_name, room %> <br>
-                (<%= room.distance.round(2) %> miles away)
-              </div>
-          </div>
-        </div>
-
-      <% end %>
-    </div>
 
 
 
-  </div>
-  </div>
+
+  <!--/div>
+  </div -->
 
   <script>
     $('#average_rating').raty({
