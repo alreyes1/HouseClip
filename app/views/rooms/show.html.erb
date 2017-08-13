@@ -21,6 +21,11 @@
             <%= image_tag avatar_url(@room.user), class: "img-circle avatar-large" %> <br><br>
             <%= @room.user.fullname %>
           </div>
+
+          <div class="col-md-4">
+            <!-- Reservation Form -->
+          <%= render 'reservations/form' %>
+          </div>
       </div>
       <hr>
 
@@ -188,10 +193,7 @@
 
 
 
-      <div class="col-md-4">
-        <!-- Reservation Form -->
-      <%= render 'reservations/form' %>
-      </div>
+
 
 
 
