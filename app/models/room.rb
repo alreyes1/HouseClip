@@ -22,8 +22,8 @@ class Room < ActiveRecord::Base
     else
       "blank.jpg"
     end
-
   end
+  
   def average_rating
     reviews.count == 0 ? 0 : reviews.average(:star).round(2)
   end
