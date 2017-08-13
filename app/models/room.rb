@@ -16,7 +16,15 @@ class Room < ActiveRecord::Base
   validates :summary, presence: true, length: {maximum: 500}
   validates :address, presence: true
 
+  def cover_photo(size)
+    if self.photos.length > 0
+      self.photos[0].image.url(size)
+    else
+      "blank.jpg"
+    end
+
+  end
   def average_rating
-    reviews.count == 0 ? 0 : reviews.average(:star).round(2)  
+    reviews.count == 0 ? 0 : reviews.average(:star).round(2)
   end
 end
