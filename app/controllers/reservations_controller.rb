@@ -22,7 +22,7 @@ end
 	def create
     @room = Room.find(params[:room_id])
 
-		if current_user == room.user
+		if current_user == @room.user
 			flash[:alert] = "Rooms Cannot be booked by owner!"
 		else
 		@reservation = current_user.reservations.create(reservation_params.merge(room_id: @room.id))
