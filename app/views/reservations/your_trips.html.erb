@@ -18,15 +18,20 @@
 						<div class="col-md-2">
               <%= trip.start_date.try(:strftime, '%v') %>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-2">
 							<%= link_to room_path(trip.room) do %>
-								<%= image_tag trip.room.photos[0].image.url(:thumb) if trip.room.photos.length > 0 %>
+								<%= image_tag trip.room.cover_photo(:thumb) if trip.room.photos.length > 0 %>
 							<% end %>
 						</div>
-						<div class="col-md-2">
-							<%= link_to user_path(trip.room.user) do %>
+						<div class="col-md-8">
+							<%= link_to trip.room.listing_name, room_path(trip.room) %>
+							<span class="pull-right text-center">
 								<%= image_tag avatar_url(trip.room.user), class: "img-circle avatar-medium" %>
-							<% end %>
+								<%= link_to user_path(trip.room.user) do %>
+									<%= trip.room.user.fullname %>
+								<% end %>
+							</span>
+
 						</div>
 						<div class="col-md-2 right">
 							<h4>$<%= trip.total %></h4>
