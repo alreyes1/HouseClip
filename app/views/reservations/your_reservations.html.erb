@@ -24,10 +24,10 @@
   							<% end %>
   						</div>
   						<div class="col-md-8">
-								<%= link_to reservation.room.listing_name, room_path(reservation.room) %> <br>
-								<span>
+								<%= link_to reservation.room.listing_name, room_path(reservation.room) %>
+								<span class="pull-right text-center">
   							<%= link_to user_path(reservation.user) do %>
-  								<%= image_tag avatar_url(reservation.user), class: "img-circle avatar-small" %> <br>
+  								<%= image_tag avatar_url(reservation.user), class: "img-circle avatar-medium" %> <br>
 									<%= reservation.user.fullname %>
   							<% end %>
 								</span>
