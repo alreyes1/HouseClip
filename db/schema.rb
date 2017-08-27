@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170629001209) do
+ActiveRecord::Schema.define(version: 20170817002649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,11 +60,16 @@ ActiveRecord::Schema.define(version: 20170629001209) do
     t.text     "comment"
     t.integer  "star"
     t.integer  "room_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "reservation_id"
+    t.integer  "guest_id"
+    t.integer  "host_id"
+    t.string   "type"
+    t.index ["guest_id"], name: "index_reviews_on_guest_id", using: :btree
+    t.index ["host_id"], name: "index_reviews_on_host_id", using: :btree
+    t.index ["reservation_id"], name: "index_reviews_on_reservation_id", using: :btree
     t.index ["room_id"], name: "index_reviews_on_room_id", using: :btree
-    t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -123,7 +128,9 @@ ActiveRecord::Schema.define(version: 20170629001209) do
   add_foreign_key "photos", "rooms"
   add_foreign_key "reservations", "rooms"
   add_foreign_key "reservations", "users"
+  add_foreign_key "reviews", "reservations"
   add_foreign_key "reviews", "rooms"
-  add_foreign_key "reviews", "users"
+  add_foreign_key "reviews", "users", column: "guest_id"
+  add_foreign_key "reviews", "users", column: "host_id"
   add_foreign_key "rooms", "users"
 end

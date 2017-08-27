@@ -21,7 +21,8 @@ Rails.application.routes.draw do
   end
 
   resources :rooms do
-    resources :reviews, only: [:create, :destroy]
+    resources :guest_reviews, only: [:create, :destroy]
+    resources :host_reviews, only: [:create, :destroy]
   end
 
   get '/preload' => 'reservations#preload'
