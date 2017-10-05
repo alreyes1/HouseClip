@@ -5,6 +5,10 @@
 body {
   color: #565a5c;
   background-color: #F8F8F8;
+  font-family: "Varela Round", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+a {
+  color: #00A699;
 }
 
 .container {
@@ -19,6 +23,11 @@ body {
   color: #FF5A5F;
   font-size: 2em;
   font-weight: 400;
+}
+.btn-block {
+  display: block;
+  white-space: normal;
+  width: 100%;
 }
 
 .btn-primary.btn {
@@ -286,4 +295,8 @@ input[type="checkbox"]:checked:before {
   color: #ffffff;
   vertical-align: middle;
   display: table-cell;
+}
+.banner {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
