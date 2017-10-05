@@ -14,6 +14,9 @@ a {
 .container {
 	width: 80%;
 }
+.text-red, .icon-red {
+  color: #FF5A5F;
+}
 
 .navbar-default {
   background-color: #FFFFFF;
@@ -28,6 +31,7 @@ a {
   display: block;
   white-space: normal;
   width: 100%;
+  color: #FF5A5F;
 }
 
 .btn-primary.btn {
