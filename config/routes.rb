@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
 
 resources :users, only: [:show]
+resources :rooms
 resources :rooms, except: [:edit] do
   resources :photos, only: [:create, :destroy]
   resources :reservations, only: [:create]
