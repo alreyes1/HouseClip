@@ -25,4 +25,7 @@ get '/your_reservations' => 'reservations#your_reservations'
 post '/notify' => 'reservations#notify'
 
 get 'search' => 'pages#search'
+
+# ------Part 2 ------
+get 'dashboard' => 'dashboards#index'
 end
