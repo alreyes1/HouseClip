@@ -13,6 +13,9 @@
           <% if current_user.provider %>
             <li>Facebook<span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span></li>
           <% end %>
+          <% if current_user.phone_verified %>
+            <li>Phone Number<span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span></li>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -32,7 +35,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">Your Listings (<%= @rooms.length %>)</div>
       <div class="panel-body">
-        <%= render partial: "rooms/rooms_list", locals: {rooms: @rooms} %>  
+        <%= render partial: "rooms/rooms_list", locals: {rooms: @rooms} %>
       </div>
     </div>
 
