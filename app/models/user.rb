@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
   end
 
   def send_pin
-    @client = Twilio::REST::Client.new ENV['twilio_account'], ENV['twilio_token']
+    @client = Twilio::REST::Client.new 
     @client.messages.create(
       from: '+14049628760',
       to: self.phone_number,
