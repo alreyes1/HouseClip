@@ -37,8 +37,8 @@ class User < ActiveRecord::Base
   end
 
   def send_pin
-    @client = Twilio::Rest::Client.new
-    @client.message.create(
+    @client = Twilio::REST::Client.new
+    @client.messages.create(
       from: '+14049628760',
       to: self.phone_number,
       body: "Your Houseclip phone verification pin is #{self.pin}"
