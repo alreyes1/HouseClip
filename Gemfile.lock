@@ -283,7 +283,7 @@ DEPENDENCIES
   thin
   toastr-rails
   turbolinks (~> 5)
-  twilio-ruby (~> 4.11.1)
+  twilio-ruby (~> 4.11)
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)

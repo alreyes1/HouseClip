@@ -106,7 +106,7 @@
        <div class="modal-body">
          <%= form_for current_user, url: verify_phone_number_user_path(current_user), method: :post do |f| %>
             <div class="form-group">
-              <%= f.phone_field :pin, class: "form-control", placeholder: "Your Pin", value: "" %>
+            <%= f.text_field :pin, class: "form-control", placeholder: "Your PIN", value: "" %>
             </div>
             <div class="text-center">
               <%= f.submit "Verify", class: "btn btn-normal" %>

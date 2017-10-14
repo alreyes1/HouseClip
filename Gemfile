@@ -33,7 +33,7 @@ gem 'thin'
 gem 'ransack'
 
 #--- gems for sms, stripe and calendar features ---
-gem 'twilio-ruby', '~> 4.11.1'
+gem 'twilio-ruby', '~> 4.11'
 
 
 
