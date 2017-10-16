@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171013210051) do
+ActiveRecord::Schema.define(version: 20171016231549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,8 +50,9 @@ ActiveRecord::Schema.define(version: 20171013210051) do
     t.datetime "end_date"
     t.integer  "price"
     t.integer  "total"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "status",     default: 0
     t.index ["room_id"], name: "index_reservations_on_room_id", using: :btree
     t.index ["user_id"], name: "index_reservations_on_user_id", using: :btree
   end
@@ -89,10 +90,11 @@ ActiveRecord::Schema.define(version: 20171013210051) do
     t.integer  "price"
     t.boolean  "active"
     t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "instant",      default: 1
     t.index ["user_id"], name: "index_rooms_on_user_id", using: :btree
   end
 
