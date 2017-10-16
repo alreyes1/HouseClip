@@ -28,7 +28,9 @@
                 <%= f.select :instant, Room.instants.map {|key,value| [key.humanize, key]}, selected: 'Instant', prompt: "Select...", class:"form-control" %>
               </div>
             </div>
-
+          </div>
+          
+          <div class="row">
             <div class="col-md-4 select">
               <div class="form-group">
                 <label>Accommodate</label>
