@@ -41,3 +41,5 @@ resources :reservations, only: [:approve, :decline] do
     post '/decline' => "reservations#decline"
   end
 end
+
+end
