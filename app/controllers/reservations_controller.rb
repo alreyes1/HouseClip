@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
 	before_action :authenticate_user!
+	before_action :set_reservation, only: [:approve, :declined]
 
 def preload
 	room = Room.find(params[:room_id])
@@ -45,7 +46,7 @@ end
 			else
 				flash[:alert] = "Cannot make a reservation!"
 			end
-			
+
     end
     redirect_to room
   end
@@ -58,6 +59,16 @@ end
 		@rooms = current_user.rooms
 	end
 
+	def approve
+		@reservation.Approved!
+		redirect_to your_reservations_path
+	end
+
+	def declined
+		@reservation.Declined!
+		redirect_to your_reservations_path
+	end
+
 	private
 		def is_conflict(start_date, end_date)
 			room = Room.find(params[:room_id])
@@ -65,6 +76,11 @@ end
 			check = room.reservations.where("? < start_date AND end_date < ?", start_date, end_date)
 			check.size > 0? true : false
 		end
+
+		def set_reservation
+			@reservation = Reservation.find(params[:id])
+		end
+
 		def reservation_params
 			params.require(:reservation).permit(:start_date, :end_date)
 		end
