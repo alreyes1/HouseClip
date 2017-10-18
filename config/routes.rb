@@ -35,9 +35,9 @@ get 'search' => 'pages#search'
 # ------Part 2 ------
 get 'dashboard' => 'dashboards#index'
 
-  resources :reservations, only: [:approve, :decline] do
-    member do
-      post '/approve' => "reservations#approve"
-      post '/decline' => "reservations#decline"
+resources :reservations, only: [:approve, :decline] do
+  member do
+    post '/approve' => "reservations#approve"
+    post '/decline' => "reservations#decline"
   end
 end
