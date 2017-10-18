@@ -65,7 +65,7 @@ end
 	end
 
 	def declined
-		@reservation.Declined!
+		@reservation.Decline!
 		redirect_to your_reservations_path
 	end
 
