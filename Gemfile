@@ -34,7 +34,8 @@ gem 'ransack'
 
 #--- gems for sms, stripe and calendar features ---
 gem 'twilio-ruby', '~> 4.11'
-
+gem 'fullcalendar-rails', '~> 3.4.0'
+gem 'momentjs-rails', '~> 2.17.1'
 
 
 

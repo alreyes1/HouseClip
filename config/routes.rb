@@ -42,4 +42,5 @@ resources :reservations, only: [:approve, :decline] do
   end
 end
 
+get '/host_calendar' => "calendar#host"
 end

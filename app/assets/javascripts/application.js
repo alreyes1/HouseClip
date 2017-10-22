@@ -16,4 +16,6 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require private_pub
+//= require moment
+//= require fullcalendar
 //= require_tree .

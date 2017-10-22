@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "toastr";
+@import "fullcalendar";
 
 body {
   color: #565a5c;
@@ -305,4 +306,35 @@ input[type="checkbox"]:checked:before {
   margin-top: 50px;
   margin-bottom: 50px;
   width: 80%;
+}
+
+//Calendar
+.fc-content.Waiting {
+  background-color: #C9CC6D;
+}
+
+.fc-past {
+  background-color: lightgrey;
+}
+
+.fc-day {
+  position: relative;
+}
+
+.fc-content {
+  background-color: #00A699;
+  height: 40px;
+  border-radius: 20px;
+}
+
+.fc-event {
+  border: 0px;
+  background-color: transparent;
+}
+
+.fc-title {
+  font-size: 14px;
+  position: relative;
+  top: 7px;
+  left: 20px;
 }
