@@ -24,6 +24,7 @@
 
   function showReservations(data) {
     return data.map(function (e) {
+
       if (e['start_date'] !== e['end_date']) {
         e['end_date'] = moment.utc(e['end_date']).add(1,'days')
       }
@@ -53,6 +54,11 @@
             </div>
           </a>
         `);
+    },
+    dayRender: function(date, cell) {
+      <% if !@rooms.blank? %>
+        cell.append('<span class="day-price">' + '$<%= @room.price %>' + '</span>')
+      <% end %>
     }
   });
 
