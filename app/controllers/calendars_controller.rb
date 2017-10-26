@@ -6,7 +6,7 @@ class CalendarsController < ApplicationController
     date_from = Date.parse(calendar_params[:start_date])
     date_to = Date.parse(calendar_params[:end_date])
 
-    (date_from.date_to).each do |date|
+    (date_from..date_to).each do |date|
       calendar = Calendar.where(room_id: params[:room_id], day: date)
 
       if calendar.present?
