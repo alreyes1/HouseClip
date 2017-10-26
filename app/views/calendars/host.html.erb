@@ -1,4 +1,4 @@
-<% if !@room.blank? %>
+<% if !@rooms.blank? %>
   <div class="row">
     <%= search_form_for @search, class: 'form-group', remote: true, url: host_calendar_path do |f| %>
       <div class="col-md-6 select">
@@ -11,8 +11,8 @@
         </div>
       </div>
 
-      <%= f.hidden_field :start_date, id: "start_date", value: params[:start_date], onchange: "$(this.form).submit()" %>
-      <% end %>
+      <%= f.hidden_field :start_date, id: "start-date", value: params[:start_date], onchange: "$(this.form).submit()" %>
+    <% end %>
   </div>
 <% end %>
 
@@ -26,10 +26,10 @@
 
   function showReservations(data) {
     return data.map(function (e) {
-
       if (e['start_date'] !== e['end_date']) {
-        e['end_date'] = moment.utc(e['end_date']).add(1,'days')
+        e['end_date'] = moment.utc(e['end_date']).add(1, 'days')
       }
+
       return {
         name: e.fullname,
         start: e['start_date'],
@@ -40,7 +40,7 @@
     })
   }
 
-  $('#calendar').fullCalendar ({
+  $('#calendar').fullCalendar({
     header: {
       left: 'title',
       center: '',
@@ -50,17 +50,19 @@
     events: showReservations(reservations),
     eventRender: function(event, element, view) {
       return $(`
-          <a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end">
-            <div class="fc-content ${event.status}">
-              <span class="fc-title"><img src="${event.avatar}" class="img-circle avatar-small"> ${event.name}</span>
-            </div>
-          </a>
-        `);
+        <a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end">
+          <div class="fc-content ${event.status}">
+            <span class="fc-title"><img class="img-circle avatar-small" src="${event.avatar}"> ${event.name}</span>
+          </div>
+        </a>
+      `);
     },
     dayRender: function(date, cell) {
       var dayInfo = $.grep(days, function(e) {
         return e.day === date.format();
       });
+
+      console.log(dayInfo);
 
       <% if !@rooms.blank? %>
         if (dayInfo.length > 0) {
@@ -82,7 +84,7 @@
       var end_date = moment(end).subtract(1, "days");
 
       <% if @rooms.blank? %>
-        $('#calendar').fullCalendar('unselect');
+          $('#calendar').fullCalendar('unselect');
       <% end %>
 
       var overlap = reservations.filter(function(e) {
@@ -98,13 +100,13 @@
         $('#new_calendar').modal('show');
 
         $('#calendar_start_date').datepicker({
-          dateFormat: 'yy-mm-dd',
+          dateFormat: "yy-mm-dd",
           setDate: start_date
         });
         $('#calendar_start_date').val(start_date.format("YYYY-MM-DD"));
 
         $('#calendar_end_date').datepicker({
-          dateFormat: 'yy-mm-dd',
+          dateFormat: "yy-mm-dd",
           setDate: end_date
         });
         $('#calendar_end_date').val(end_date.format("YYYY-MM-DD"));
@@ -112,18 +114,19 @@
     }
   });
 
-$('.fc-prev-button').click(function() {
-  var current = new Date($('#start_date').val());
-  var prev = new Date(current.getFullYear(), current.getMonth() - 1, 1)
-  $('#start-date').val(moment(prev).format('YYYY-MM-DD'))
-  $('start-date').trigger('change')
-})
+  $('.fc-prev-button').click(function() {
+    var current = new Date($('#start-date').val());
+    var prev = new Date(current.getFullYear(), current.getMonth() - 1, 1)
+    $('#start-date').val(moment(prev).format('YYYY-MM-DD'))
+    $('#start-date').trigger('change')
+  });
 
-$('.fc-next-button').click(function() {
-  var current = new Date($('#start_date').val());
-  var next = new Date(current.getFullYear(), current.getMonth() + 1, 1)
-  $('#start-date').val(moment(next).format('YYYY-MM-DD'))
-  $('start-date').trigger('change')
-})
+  $('.fc-next-button').click(function() {
+    var current = new Date($('#start-date').val());
+    var next = new Date(current.getFullYear(), current.getMonth() + 1, 1)
+    $('#start-date').val(moment(next).format('YYYY-MM-DD'))
+    $('#start-date').trigger('change')
+  });
+
 
 </script>
