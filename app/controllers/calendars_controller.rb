@@ -41,12 +41,12 @@ class CalendarsController < ApplicationController
       @room = Room.find(params[:room_id])
       start_date = Date.parse(params[:start_date])
 
-      first_of_month = (start_date - 1.month).beginning_of_month
-      end_of_month = (start_date + 1.month).end_of_month
+      first_of_month = (start_date - 1.months).beginning_of_month # => Jun 1
+      end_of_month = (start_date + 1.months).end_of_month # => Aug 31
 
       @events = @room.reservations.joins(:user)
-                    .select('reservations.*, users.fullname, users.image, users.email, users.uid')
-                    .where('(start_date BETWEEN ? AND ?) AND status <> ?', first_of_month, end_of_month, 2)
+                      .select('reservations.*, users.fullname, users.image, users.email, users.uid')
+                      .where('(start_date BETWEEN ? AND ?) AND status <> ?', first_of_month, end_of_month, 2)
       @events.each{ |e| e.image = avatar_url(e) }
       @days = Calendar.where("room_id = ? AND day BETWEEN ? AND ?", params[:room_id], first_of_month, end_of_month)
     else
