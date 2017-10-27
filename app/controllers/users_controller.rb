@@ -42,13 +42,13 @@ end
 
 def add_card
   if current_user.stripe_id.blank?
-    custumer = Stripe::Customer.create(
+    customer = Stripe::Customer.create(
       email: current_user.email
     )
     current_user.stripe_id = customer.id
     current_user.save
   else
-    custumer = Stripe::Customer.retrieve(current_user.stripe_id)
+    customer = Stripe::Customer.retrieve(current_user.stripe_id)
   end
 
   # Add Credit Card to Stripe
@@ -59,7 +59,7 @@ def add_card
     :exp_year => year,
     :cvc => params[:cvv]
     })
-    custumer.sources.create(source: new_token.id)
+    customer.sources.create(source: new_token.id)
 
     flash[:notice] = "Your card is saved."
     redirect_to payment_method_path
