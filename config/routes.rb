@@ -44,4 +44,6 @@ resources :reservations, only: [:approve, :decline] do
 end
 
 get '/host_calendar' => "calendars#host"
+get '/paynent_method' => "users#payment"
+post '/add_card' => "users#add_card"
 end

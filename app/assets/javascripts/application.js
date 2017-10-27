@@ -18,4 +18,5 @@
 //= require private_pub
 //= require moment
 //= require fullcalendar
+//= require card
 //= require_tree .
