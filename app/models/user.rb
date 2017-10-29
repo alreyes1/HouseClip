@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
   end
 
   def send_pin
-    @client = Twilio::REST::Client.new 
+    @client = Twilio::REST::Client.new
     @client.messages.create(
       from: '+14049628760',
       to: self.phone_number,
@@ -49,4 +49,8 @@ class User < ActiveRecord::Base
     update(phone_verified: true) if self.pin == entered_pin
   end
 
+def is_active_host
+  !self.merchant_id.blank?
+
+end
 end
