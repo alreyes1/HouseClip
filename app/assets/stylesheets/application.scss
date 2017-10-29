@@ -28,6 +28,16 @@ a {
   font-size: 2em;
   font-weight: 400;
 }
+.btn.btn-normal {
+  border: 1px solid #ff5a5f;
+  background-color: #ff5a5f;
+}
+
+.btn.btn-normal:active {
+  outline: none;
+  border-color: #e00007;
+  background-color: #e00007;
+}
 .btn-block {
   display: block;
   white-space: normal;
