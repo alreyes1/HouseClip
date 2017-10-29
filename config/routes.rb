@@ -43,6 +43,8 @@ resources :reservations, only: [:approve, :decline] do
   end
 end
 
+resources :revenues, only: [:index]
+
 get '/host_calendar' => "calendars#host"
 get '/payment_method' => "users#payment"
 get '/payout_method' => "users#payout"

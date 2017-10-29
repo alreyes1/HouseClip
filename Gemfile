@@ -32,7 +32,7 @@ gem 'private_pub'
 gem 'thin'
 gem 'ransack'
 
-#--- gems for sms, stripe and calendar features ---
+#--- gems for sms, stripe and calendar and revenue chart features ---
 gem 'twilio-ruby', '~> 4.11'
 gem 'fullcalendar-rails', '~> 3.4.0'
 gem 'momentjs-rails', '~> 2.17.1'
@@ -42,6 +42,7 @@ gem 'rails-assets-card', source: 'https://rails-assets.org'
 
 gem 'omniauth-stripe-connect', '~> 2.10.0'
 
+gem 'chartkick', '~> 2.2.4'
 
 
 group :development, :test do
