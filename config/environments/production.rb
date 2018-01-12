@@ -107,5 +107,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #ActionCable set up
-  config.action_cable.url = "ws://houseclip.properties/cable"
+  config.action_cable.url = "wss://houseclip.properties/"
 end
