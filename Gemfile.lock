@@ -299,7 +299,7 @@ DEPENDENCIES
   rails (~> 5.0.2)
   rails-assets-card!
   ransack
-  redis (~> 3.3)
+  redis (~> 3.3.3)
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
