@@ -11,7 +11,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         Conversation with <%= @other.fullname %>
-        <input id="conversation_id" type="hidden" value="<%= @conversation.id%>">
+        <input id="conversation_id" type="hidden" value="<%= @conversation.id %>">
       </div>
 
       <div class="panel-body">
@@ -39,5 +39,3 @@
   </div>
 
 </div>
-
-<%= subscribe_to conversation_messages_path(@conversation) %>
