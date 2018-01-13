@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Housclip</title>
+    <title>Houseclip</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1XEDHM32q1GBFywDICjLpca_f8EM9ZWs&libraries=places"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -14,9 +14,12 @@
   <body><!-- Static navbar -->
 
   <%= render 'shared/navbar' %>
+  <%= render 'shared/message' %>
 
-   <%= render 'shared/message' %>
-
+  <% if current_user %>
+    <input type="hidden" id="user_id" value="<%= current_user.id %>">
+  <% end %>
+  
    <div class="container">
      <%= yield %>
    </div>
