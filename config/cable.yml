@@ -11,4 +11,3 @@ production: &production
   :port: 53679
   :password: p0ee4458bbafc025d1f8e5a99f54bd9580626fc51049bfa93e4f87cec3e45bfa9
   :inline: true
-  :timeout: 1
