@@ -135,7 +135,7 @@
 		}
 
 		$.ajax({
-			url: '<%= preload_room_path(@room) %>',
+			url: '<%= preload_path(@room) %>',
 			//data: {'room_id': <%= @room.id %>},
 			dataType: 'json',
 			success: function(data) {
