@@ -94,11 +94,12 @@
 						$('#btn_book').attr('disabled', true);
 
 					} else {
-
-						$('#preview').show();
-						$('#btn_book').attr('disabled', false);
+						$('#message').text("");
+            $('#preview').show();
+            $('#btn_book').attr('disabled', false);
 
 						// -- NEW PRICE CALCULATION
+						$('#special_list').empty();
 						var selectedDates = [];
 
 						// Step 1 CREATE AN ARRAY OF SELECTED DATES
@@ -137,7 +138,7 @@
 		$.ajax({
 			url: '<%= preload_path(@room) %>',
 			//data: {'room_id': <%= @room.id %>},
-			dataType: 'json',
+			dataTyp: 'json',
 			success: function(data) {
 
 				specialDates = data.special_dates;
