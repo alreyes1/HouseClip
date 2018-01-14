@@ -14,7 +14,7 @@
         <div class="container text-center">
           <%= form_for [@conversation, @conversation.messages.new], remote: true do |f| %>
               <div class="form-group">
-                <%= f.text_field :context, placeholder: "Add a personal message", class: "form-control" %>
+                <%= f.text_field :content, placeholder: "Add a personal message", class: "form-control" %>
               </div>
               <%= f.hidden_field :user_id, value: current_user.id %>
               <div>
