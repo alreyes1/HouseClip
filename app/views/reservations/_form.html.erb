@@ -24,12 +24,23 @@
 		<table class="reservation-table" >
 			<tbody>
 				<tr>
-					<td>Day(s)</td>
-					<td><span id="reservation_days"></span></td>
+					<td>Price</td>
+					<td class="text-right">$<%= @room.price %></td>
 				</tr>
 				<tr>
+					<td>Day(s)</td>
+					<td class="text-right">x <span id="reservation_days"></span></td>
+				</tr>
+				<tr id="special_details">
+					<td colspan="2">
+						Special Price <br>
+						<ul id="special_list"></ul>
+					</td>
+				</tr>
+
+				<tr>
 					<td>Total</td>
-					<td>$<span id="reservation_sum"></span></td>
+					<td class="text-right">$<span id="reservation_sum"></span></td>
 				</tr>
 			</tbody>
 		</table>
@@ -57,6 +68,7 @@
 	$(function() {
 
 		unavailableDates = [];
+		specialDates = [];
 
 		function specialCheck() {
 
@@ -71,7 +83,7 @@
 			}
 
 			$.ajax({
-				url: "/preview",
+				url: '<%= preview_room_path(@room) %>',
 				data: input,
 				success: function(data) {
 
@@ -86,9 +98,35 @@
 						$('#preview').show();
 						$('#btn_book').attr('disabled', false);
 
-						var total = 1 * <%= @room.price %>
+						// -- NEW PRICE CALCULATION
+						var selectedDates = [];
+
+						// Step 1 CREATE AN ARRAY OF SELECTED DATES
+						while (start_date <= end_date) {
+							selectedDates.push($.datepicker.formatDate('d-m-yy', new Date(start_date)));
+							start_date.setDate(start_date.getDate() + 1);
+						}
+
+						// Step 2 create an array of special dates (custom price) within selected dates
+						var selectedSpecialDates = specialDates.filter(function(sDate) {
+							var d = $.datepicker.formatDate('d-m-yy', new Date(sDate.day));
+							return selectedDates.indexOf(d) !== -1;
+						});
+
+						// Step 3 calculate the total amount with custom price if needed
+						var total = (days - selectedSpecialDates.length) * <%= @room.price %>;
+						if (selectedSpecialDates > 0 ) {
+							$('#special_details').show();
+							selectedSpecialDates.map(function (date) {
+								total += date.price;
+								$('#special_list').append('<li class="text-right">(' + date.day +'): $' + date.price +'</li>');
+							});
+						} else {
+							$('#special_details').hide();
+						}
+
+
 						$('#reservation_days').text(days);
-						$('#reservation_sum').text(total);
 						$('#reservation_total').val(total);
 					}
 				}
@@ -97,10 +135,12 @@
 		}
 
 		$.ajax({
-			url: '/preload',
-			data: {'room_id': <%= @room.id %>},
+			url: '<%= preload_room_path(@room) %>',
+			//data: {'room_id': <%= @room.id %>},
 			dataType: 'json',
 			success: function(data) {
+
+				specialDates = data.special_dates;
 
 				$.each(data.reservations, function(arrID, arrValue) {
 					for(var d = new Date(arrValue.start_date); d <= new Date(arrValue.end_date); d.setDate(d.getDate() + 1)) {
@@ -134,7 +174,7 @@
 						specialCheck();
 					}
 				});
-				
+
 			}
 		});
 
