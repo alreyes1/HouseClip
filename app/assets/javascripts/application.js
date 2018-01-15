@@ -14,7 +14,7 @@
 //= require bootstrap-sprockets
 //= require toastr
 //= require jquery_ujs
-//= require jquery-ui/datepicker
+//= require jquery-ui
 //= require private_pub
 //= require moment
 //= require fullcalendar
