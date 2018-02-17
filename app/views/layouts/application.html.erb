@@ -2,13 +2,15 @@
 <html>
   <head>
     <title>Houseclip</title>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1XEDHM32q1GBFywDICjLpca_f8EM9ZWs&libraries=places"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/hot-sneaks/jquery-ui.css">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
+
   </head>
 
   <body><!-- Static navbar -->
@@ -19,7 +21,7 @@
   <% if current_user %>
     <input type="hidden" id="user_id" value="<%= current_user.id %>">
   <% end %>
-  
+
    <div class="container">
      <%= yield %>
    </div>
