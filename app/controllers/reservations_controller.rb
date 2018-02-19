@@ -3,7 +3,6 @@ class ReservationsController < ApplicationController
 	before_action :set_reservation, only: [:approve, :declined]
 
 
-
 	def create
     room = Room.find(params[:room_id])
 

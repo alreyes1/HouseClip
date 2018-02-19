@@ -79,7 +79,7 @@
       }
 
       $.ajax({
-        url: '<%= preload_path(@room) %>',
+        url: '<%= preload_room_path(@room) %>',
         data: input,
         success: function (data) {
 
@@ -131,7 +131,7 @@
     }
 
     $.ajax({
-      url: '<%= preload_path(@room) %>',
+      url: '<%= preload_room_path(@room) %>',
       dateTyp: 'json',
       success: function(data) {
 
