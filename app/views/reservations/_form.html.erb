@@ -8,11 +8,11 @@
       <div class="row">
         <div class="col-md-6">
           <label>Check In</label>
-          <%= text_field_tag :start_date, readonly: true, placeholder: "Start Date", class: "form-control datepicker" %>
+          <%= f.text_field :start_date, placeholder: "Start Date", class: "form-control datepicker" %>
         </div>
         <div class="col-md-6">
           <label>Check Out</label>
-          <%= text_field_tag :end_date, readonly: true, placeholder: "End Date", class: "form-control datepicker", disabled: true %>
+          <%= f.text_field :end_date, placeholder: "End Date", class: "form-control datepicker", disabled: true %>
         </div>
       </div>
 
