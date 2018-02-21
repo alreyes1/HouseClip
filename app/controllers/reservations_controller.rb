@@ -13,25 +13,26 @@ class ReservationsController < ApplicationController
 			flash[:alert] = "Please update your payment method."
 			return redirect_to payment_method_path
 
-    else
-      start_date = Date.parse(reservation_params[:start_date])
-      end_date = Date.parse(reservation_params[:end_date])
-      days = (end_date - start_date).to_i + 1
+		else
+       start_date = Date.parse(reservation_params[:start_date])
+       end_date = Date.parse(reservation_params[:end_date])
+       days = (end_date - start_date).to_i + 1
 
-			special_dates = room.calendars.where(
-				"status = ? AND day BETWEEN ? AND ? AND price <> ?", 0, start_date, end_date, room.price
-			)
+       special_dates = room.calendars.where(
+         "status = ? AND day BETWEEN ? AND ? AND price <> ?",
+         0, start_date, end_date, room.price
+       )
 
-      @reservation = current_user.reservations.build(reservation_params)
-      @reservation.room = room
-      @reservation.price = room.price
-      #@reservation.total = room.price * days
-      #@reservation.save
+       @reservation = current_user.reservations.build(reservation_params)
+       @reservation.room = room
+       @reservation.price = room.price
+       # @reservation.total = room.price * days
+       # @reservation.save
 
-			@reservation.total = room.price * (days - special_dates.count)
-			special_dates.each do |date|
-				@reservation.total += date.price
-			end
+       @reservation.total = room.price * (days - special_dates.count)
+       special_dates.each do |date|
+           @reservation.total += date.price
+       end
 
 			if @reservation.Waiting!
 				if room.Request?
@@ -48,8 +49,8 @@ class ReservationsController < ApplicationController
   end
 
 	def your_trips
-		@trips = current_user.reservations
-	end
+    @trips = current_user.reservations.order(start_date: :asc)
+  end
 
 	def your_reservations
 		@rooms = current_user.rooms
