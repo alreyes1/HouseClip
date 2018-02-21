@@ -16,6 +16,10 @@ end
 
 resources :rooms
 resources :rooms, except: [:edit] do
+  member do
+    get 'preload'
+    get 'preview'
+  end
   resources :photos, only: [:create, :destroy]
   resources :reservations, only: [:create]
   resources :calendars
