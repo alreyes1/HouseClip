@@ -88,11 +88,11 @@ class RoomsController < ApplicationController
   end
 
   private
-    def is_conflict(start_date, end_date, room)
-      check = room.reservations.where("(? < start_date AND end_date < ?) AND status = ?", start_date, end_date, 1)
-      check_2 = room.calendars.where("day BETWEEN ? AND ? AND status = ?", start_date, end_date, 1).limit(1)
+  def is_conflict(start_date, end_date, room)
+    check = room.reservations.where("(? < start_date AND end_date < ?) AND status = ?", start_date, end_date, 1)
+    check_2 = room.calendars.where("day BETWEEN ? AND ? AND status = ?", start_date, end_date, 1).limit(1)
 
-      check.size > 0 || check_2 > 0 ? true : false
+    check.size > 0 || check_2.size > 0 ? true : false
     end
 
     def set_room
