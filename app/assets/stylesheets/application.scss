@@ -484,11 +484,15 @@ button.Stripe:active {
   left: -5px;
 }
 /*  Footer styles */
-.main-footer{
-height: 355px;
+.container.footer{
+
+}
+.main-footer {
+    height: 170px;
+    padding-top: 100px;
 }
 
-img.footer_logo {
+.footer_logo {
   width: 20px;
   height: 20px;
 }
