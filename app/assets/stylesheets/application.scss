@@ -496,3 +496,8 @@ img.footer_logo {
   width: 20px;
   height: 20px;
 }
+
+.glyphicon-heart:before {
+    content: "\e005";
+    color: red;
+}
