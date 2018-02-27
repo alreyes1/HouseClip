@@ -6,7 +6,7 @@ module ApplicationHelper
     else
       gravatar_id = Digest::MD5::hexdigest(user.email).downcase
       default_url = "https://houseclip.properties/Logo150.png"
-      url = "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}&d=#{CGI::escape(default_url)}"
+      url = "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{150}&d=#{CGI::escape(default_url)}"
     end
   end
 
