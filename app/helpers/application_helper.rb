@@ -5,7 +5,7 @@ module ApplicationHelper
 
     else
       gravatar_id = Digest::MD5::hexdigest(user.email).downcase
-      "http://gravatar.com/avatar/#{gravatar_id}.png?s=150&d=https://houseclip.properties/images/Logo150.png"
+      "https://gravatar.com/avatar/#{gravatar_id}.png?s=150&d=https://houseclip.properties/images/Logo150.png"
     end
   end
   def stripe_express_path
