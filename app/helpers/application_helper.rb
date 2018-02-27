@@ -5,8 +5,7 @@ module ApplicationHelper
 
     else
       gravatar_id = Digest::MD5::hexdigest(user.email).downcase
-      default_url = "https://houseclip.properties/images/Logo150.png"
-      "http://gravatar.com/avatar/#{gravatar_id}.png?s=150&d=default_url"
+      "http://gravatar.com/avatar/#{gravatar_id}.png?s=150&d=https://houseclip.properties/images/Logo150.png"
     end
   end
   def stripe_express_path
