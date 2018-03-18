@@ -2,7 +2,9 @@
   <div class="col-md-4">
     <div class="panel panel-default">
       <div class="panel-heading preview">
-        <%= link_to image_tag room.photos[0].image.url(:medium) if room.photos.length > 0 %>
+        <%= link_to room_path(reservation.room) do %>
+        <%= image_tag room.photos[0].image.url(:medium) if room.photos.length > 0 %>
+        <% end %>
       </div>
       <div class="panel_body">
         <%= link_to room.listing_name, room%> <br>
