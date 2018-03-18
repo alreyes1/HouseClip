@@ -8,7 +8,7 @@
     <hr/>
     <div class="row">
       <div class="col-md-3 text-center">
-        <%= link_to user_path(@user) do %>
+        <%= link_to user_path(@room.user) do %>
         <%= image_tag avatar_url(r.guest), class: "img-circle avatar-medium" %><br/><br/>
         <strong><%= r.guest.fullname %></strong>
         <% end %>
