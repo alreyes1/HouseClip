@@ -32,7 +32,9 @@
 <br/>
 
 <div class="row">
+  <%= link_to room_path(reservation.room) do %>
   <%= render partial: "rooms/rooms_list", locals: {rooms: @rooms} %>
+  <% end %>
 </div>
 
 <!-- Cities -->
