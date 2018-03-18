@@ -1,14 +1,16 @@
 <% @rooms.each do |room| %>
   <div class="col-md-4">
     <div class="panel panel-default">
-      <div class="panel-heading preview">
-        <%= image_tag room.photos[0].image.url(:medium) if room.photos.length > 0 %>
-      </div>
-      <div class="panel_body">
-        <%= link_to room.listing_name, room%> <br>
-        $<%= room.price %> - <%= room.home_type %> - <%= pluralize(room.bed_room, "bed") %>
-        <div id="star_<%= room.id %>"></div> <%= pluralize(room.average_rating, "review") %>
-      </div>
+      <%= link_to room_path(reservation.room) do %>
+          <div class="panel-heading preview">
+            <%= image_tag room.photos[0].image.url(:medium) if room.photos.length > 0 %>
+          </div>
+          <div class="panel_body">
+            <%= room.listing_name, room%> <br>
+            $<%= room.price %> - <%= room.home_type %> - <%= pluralize(room.bed_room, "bed") %>
+            <div id="star_<%= room.id %>"></div> <%= pluralize(room.average_rating, "review") %>
+          </div>
+      <% end %>
     </div>
   </div>
 
