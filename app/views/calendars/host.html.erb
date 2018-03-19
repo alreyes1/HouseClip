@@ -4,7 +4,7 @@
       <div class="col-md-6 select">
         <div class="form-group">
           <label>Your Listings</label>
-          <%= f.select :room_id, options_for_select(@rooms.collect {|u| [u.listing_name, u.id]}, params[:room_id]), {}, {
+          <%= f.select :room_id, options_for_select(@rooms.collect {|u| [u.listing_name, u.id]}, params[:room_id][:price]), {}, {
             onchange: "$(this.form).submit()",
             class: "form-control"
           } %>
