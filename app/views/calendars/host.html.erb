@@ -5,7 +5,7 @@
         <div class="form-group">
           <label>Your Listings</label>
           <%= f.select :room_id, options_for_select(@rooms.collect {|u| [u.listing_name, u.id]}, params[:room_id]), {}, {
-            onchange: "$(this.form).submit()",
+            onchange: "$(this.form).submit()", "fullCalendar('rerenderEvents')",
             class: "form-control"
           } %>
         </div>
@@ -36,7 +36,6 @@
         end: e['end_date'],
         avatar: e.image,
         status: e.status
-        price: @room.price
 
       }
     })
@@ -64,7 +63,6 @@
         return e.day === date.format();
       });
 
-      console.log(dayInfo);
 
       <% if !@rooms.blank? %>
         if (dayInfo.length > 0) {
