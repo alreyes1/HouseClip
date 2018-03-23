@@ -1,6 +1,6 @@
 <% if !@rooms.blank? %>
   <div class="row">
-    <%= search_form_for @search, class: 'form-group', remote: true, url: host_calendar_path do |f| %>
+    <%= search_form_for @search, class: 'form-group', url: host_calendar_path do |f| %>
       <div class="col-md-6 select">
         <div class="form-group">
           <label>Your Listings</label>
@@ -36,7 +36,6 @@
         end: e['end_date'],
         avatar: e.image,
         status: e.status,
-        price: e['price']
       }
     })
   }
