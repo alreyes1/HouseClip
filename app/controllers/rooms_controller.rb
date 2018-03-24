@@ -3,6 +3,8 @@ class RoomsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
   before_action :is_authorised, only: [:listing, :pricing, :description, :photo_upload, :amenities, :location, :update]
 
+  has_many :photos, dependent: :delete_all
+
   def index
     @rooms = current_user.rooms
   end
