@@ -71,7 +71,7 @@ Rails.application.configure do
     authentication: 'login'
   }
   #paperclip S3
-  config.paperclip_defaults = {
+  Paperclip::Attachment.default_options.update({
     storage: :s3,
     path: ':class/:attachment/:id/:style/:filename',
     s3_credentials: {
@@ -81,7 +81,7 @@ Rails.application.configure do
       s3_region: ENV['aws_region'],
       s3_host_name: ENV['s3_host_name']
       }
-    }
+    })
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
