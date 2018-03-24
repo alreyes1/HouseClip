@@ -25,6 +25,13 @@ class RoomsController < ApplicationController
         end
   end
 
+  def destroy
+    @room = current_user.rooms.find(params[:id])
+    @room.destroy
+
+    redirect_to room_path
+  end
+
   def show
     @photos = @room.photos
     @guest_reviews = @room.guest_reviews

@@ -18,11 +18,14 @@
             <div class="col-md-2">
               <%= image_tag room.cover_photo(:thumb) %>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-6">
               <h4><%= room.listing_name %></h4>
             </div>
-            <div class="col-md-3 right">
+            <div class="col-md-2 right">
               <%= link_to "Update", edit_room_path(room), class: "btn btn-primary" %>
+            </div>
+            <div class="col-md-2 right">
+              <%= link_to "Delete", rooms_path, class: "btn btn-primary", method: :delete, data: { confirm: 'Are you sure?' } %>
             </div>
           </div>
           <hr/>
