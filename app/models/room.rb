@@ -2,7 +2,7 @@ class Room < ActiveRecord::Base
   enum instant: {Request: 0, Instant: 1}
 
   belongs_to :user
-  has_many :photos
+  has_many :photos, dependent: :destroy
   has_many :reservations
   has_many :guest_reviews
   has_many :calendars
