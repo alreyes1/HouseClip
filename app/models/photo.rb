@@ -11,7 +11,7 @@ class Photo < ApplicationRecord
       access_key_id: ENV['access_key_id'],
       secret_access_key: ENV['secret_access_key']
     },
-    s3_region: ENV['aws_region'],
+    s3_region: ENV['aws_region']
 
 
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
