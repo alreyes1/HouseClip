@@ -29,7 +29,7 @@ class RoomsController < ApplicationController
     @room = current_user.rooms.find(params[:id])
     @room.destroy
 
-    redirect_to room_path, notice: "Room deleted"
+    redirect_to :back, notice: "Room deleted"
   end
 
   def show
