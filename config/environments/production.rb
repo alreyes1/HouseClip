@@ -74,12 +74,12 @@ Rails.application.configure do
   config.paperclip_defaults = {
     storage: :s3,
     path: ':class/:attachment/:id/:style/:filename',
-    #s3_host_name: 's3-us-east-1.amazonaws.com',
     s3_credentials: {
       bucket: ENV['bucket'],
       access_key_id: ENV['access_key_id'],
       secret_access_key: ENV['secret_access_key'],
-      s3_region: ENV['aws_region']
+      s3_region: ENV['aws_region'],
+      s3_host_name: ENV['s3_host_name']
       }
     }
 
@@ -108,5 +108,5 @@ Rails.application.configure do
 
   #ActionCable set up
   config.web_socket_server_url = "wss://houseclip.properties/cable"
-  config.action_cable.allowed_request_origins = "http://houseclip.properties"
+  config.action_cable.allowed_request_origins = "https://houseclip.properties"
 end
