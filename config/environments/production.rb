@@ -73,8 +73,8 @@ Rails.application.configure do
   #paperclip S3
   config.paperclip_defaults = {
     storage: :s3,
-    url: ':s3_domain_url',
-    path: ':attachment/:class/:id/:style/:filename',
+    #url: ':s3_domain_url',
+  #  path: ':attachment/:class/:id/:style/:filename',
     s3_region: 'us-east-1',
 
     s3_credentials: {
