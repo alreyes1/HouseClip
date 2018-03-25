@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
 
-def index
-  @photos = @room.photos
+def photos
+  @photos = Photos.all
 end
 
   def create
