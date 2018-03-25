@@ -15,8 +15,8 @@ class Photo < ApplicationRecord
       s3_host_name: ENV.fetch('s3_host_name')
     },
 
-      s3_permissions: => 'private'
-      url: => ':s3_domain_url'
+      s3_permissions: 'private'
+      url: ':s3_domain_url'
       Paperclip::Attachment.default_options[:url] = ':s3_domain_url'
       Paperclip::Attachment.default_options[:path] = ':class/:attachment/:id/:style/:filename'
 
