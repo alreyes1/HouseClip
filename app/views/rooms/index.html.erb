@@ -22,11 +22,11 @@
               <h4><%= room.listing_name %></h4>
             </div>
             <div class="col-md-2 right">
-              <%= link_to "Update", edit_room_path(room), class: "btn btn-primary" %>
+              <%= link_to "Update", listing_room_path(room), class: "btn btn-form" %>
             </div>
             <div class="col-md-2 right">
               <%= link_to "Delete",
-                          room_path(room), 
+                          room_path(room),
                                      method: :delete,
                                      data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
             </div>
