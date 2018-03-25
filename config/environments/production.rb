@@ -80,8 +80,8 @@ Rails.application.configure do
     s3_credentials: {
         bucket: ENV['bucket'],
         access_key_id: ENV['access_key_id'],
-        secret_access_key: ENV['secret_access_key'],
-        s3_host_name: 's3.amazonaws.com'
+        secret_access_key: ENV['secret_access_key']
+      #  s3_host_name: 's3.amazonaws.com'
       }
     }
 
