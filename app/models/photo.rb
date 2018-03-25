@@ -16,8 +16,8 @@ class Photo < ApplicationRecord
     },
 
       s3_permissions: 'private'
-      url: ':s3_domain_url'
-      Paperclip::Attachment.default_options[:url] = ':s3_domain_url'
+      url: ENV.fetch('s3_host_name')
+      Paperclip::Attachment.default_options[:url] = ENV.fetch('s3_host_name')
       Paperclip::Attachment.default_options[:path] = ':class/:attachment/:id/:style/:filename'
 
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
