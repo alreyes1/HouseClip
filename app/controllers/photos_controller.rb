@@ -1,9 +1,5 @@
 class PhotosController < ApplicationController
 
-def index
-  @photos = Photo.all
-end
-
   def create
       @room = Room.find(params[:room_id])
 
