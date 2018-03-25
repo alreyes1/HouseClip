@@ -73,12 +73,14 @@ Rails.application.configure do
   #paperclip S3
   config.paperclip_defaults = {
     storage: :s3,
+    path: ':class/:attachment/:id/:style/:filename',
 
     s3_credentials: {
       bucket: ENV.fetch('bucket'),
       access_key_id: ENV.fetch('access_key_id'),
       secret_access_key: ENV.fetch('secret_access_key'),
-      s3_region: ENV.fetch('aws_region')
+      s3_region: ENV.fetch('aws_region']),
+      s3_host_name: ENV.fetch('s3_host_name')
       }
     }
 
