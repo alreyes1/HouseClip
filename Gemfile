@@ -24,7 +24,7 @@ gem 'toastr-rails'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'paperclip'
-gem 'aws-sdk', '~> 2'
+gem 'aws-sdk-s3'
 gem 'geocoder', '~> 1.4', '>= 1.4.3'
 gem 'jquery-ui-rails'
 
