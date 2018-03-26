@@ -184,16 +184,16 @@
         <hr>
 
         <!-- Close by Rooms -->
-        <div class="row">
+        <!--  <div class="row">
           <h3>Near by</h3>
           <% for room in @room.nearbys(10) %>
 
             <div class="col-md-4">
               <div class="panel panel-default">
                 <div class="panel-heading preview">
-
+                  <%= link_to room_path(room) do %>
                   <%= image_tag room.photos[0].image.url(:medium) %>
-                  
+                  <% end %>
                 </div>
                   <div class="panel-body">
                     <%= link_to room.listing_name, room %> <br>
@@ -205,7 +205,7 @@
           <% end %>
         </div>
 
-    </div>
+    </div>-->
 
         <!-- Right Panel -->
         <div class="col-md-4">
