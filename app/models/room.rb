@@ -15,9 +15,8 @@ class Room < ActiveRecord::Base
   validates :accommodate, presence: true
   validates :bed_room, presence: true
   validates :bath_room, presence: true
-  validates :listing_name, presence: true, length: {maximum: 50}
-  validates :summary, presence: true, length: {maximum: 500}
-  validates :address, presence: true
+  
+
 
   def cover_photo(size)
     if self.photos.length > 0
