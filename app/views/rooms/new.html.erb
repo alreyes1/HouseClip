@@ -5,7 +5,7 @@
   <div class="panel-body">
     <div class="container">
 
-      <%= form_for @room, method: 'post', html: {multipart: true} do |f| %>
+      <%= form_for @room, html: {multipart: true} do |f| %>
 
         <div class="row">
 
@@ -58,7 +58,7 @@
 
         </div>
 
-        <div><%= f.submit "Create My Room", class: "btn btn-normal" %></div>
+        <div class="actions"><%= f.submit "Create My Room", class: "btn btn-normal" %></div>
 
       <% end %>
 
