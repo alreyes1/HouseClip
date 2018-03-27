@@ -3,7 +3,7 @@
     <div class="panel panel-default">
       <div class="panel-heading preview">
         <%= link_to room_path(room) do %>
-        <%= image_tag room.cover_photo(:medium) if room.photos.length > 0 %>
+        <%= image_tag room.cover_photo(:medium) %>
         <% end %>
       </div>
       <div class="panel_body">
