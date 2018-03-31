@@ -8,7 +8,7 @@
       </div>
       <div class="panel_body">
         <%= link_to room.listing_name, room%> <br>
-        $<%= room.price %> - <%= room.home_type %> - <%= pluralize(room.bed_room, "bed") %>
+        $<%= room.price %> - <%= room.home_type( "Apartment" ) %> - <%= pluralize(room.bed_room, "bed") %>
         <div id="star_<%= room.id %>"></div> <%= pluralize(room.average_rating, "review") %>
       </div>
     </div>
