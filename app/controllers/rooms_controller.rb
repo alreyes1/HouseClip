@@ -5,6 +5,8 @@ class RoomsController < ApplicationController
 
   def index
     @rooms = current_user.rooms
+    @apartment = Room.where({ home_type: "Apartment"})
+    @BedandB = Room.where({ home_type: "Bed & Breakfast"})
   end
 
   def new
@@ -105,6 +107,7 @@ class RoomsController < ApplicationController
     def set_room
       @room = Room.find(params[:id])
     end
+
 
     def is_authorised
       redirect_to root_path, alert: "You don't have permission" unless current_user.id == @room.user_id
