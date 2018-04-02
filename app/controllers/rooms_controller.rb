@@ -5,8 +5,6 @@ class RoomsController < ApplicationController
 
   def index
     @rooms = current_user.rooms
-    @apartments = Room.where(home_type: "Apartment")
-    @BedandB = Room.where(home_type: "Bed & Breakfast")
   end
 
   def new
@@ -107,6 +105,8 @@ class RoomsController < ApplicationController
 
     def set_room
       @room = Room.find(params[:id])
+      @apartment = Room.where(home_type: "Apartment")
+      @BedandB = Room.where(home_type: "Bed & Breakfast")
     end
 
 
