@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :set_room, except: [:index, :new, :create]
+  before_action :set_room, :set_apartment, except: [:index, :new, :create]
   before_action :authenticate_user!, except: [:show]
   before_action :is_authorised, only: [:listing, :pricing, :description, :photo_upload, :amenities, :location, :update]
 
@@ -106,9 +106,13 @@ class RoomsController < ApplicationController
 
     def set_room
       @room = Room.find(params[:id])
-      @apartment = Room.where(home_type: "Apartment")
       @BedandB = Room.where(home_type: "Bed & Breakfast")
     end
+
+    def set_apartment
+      @apartment = Room.where(home_type: "Apartment")
+    end
+
 
 
     def is_authorised
