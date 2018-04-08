@@ -7,10 +7,10 @@
 
       <script>
 
-      var map, popup, Popup;
+      var popup, Popup;
 
-        function initMap() {
-          definePopupClass();
+      function initMap() {
+        definePopupClass();
 
           var mapCanvas = document.getElementById('widget');
           var mapOptions = {
@@ -26,15 +26,8 @@
           var map = new google.maps.Map(mapCanvas, mapOptions);
 
           <% @arrRooms.each do |room| %>
-            // var marker = new google.maps.Marker({
-            //   position: new google.maps.LatLng(<%= room.latitude %>, <%= room.longitude %>),
-            //   title: "<%= room.listing_name %>",
-            //
-            // });
-            //
-            // marker.setMap(map);
 
-            content: "<div id="content">$<%= room.price %></div>"
+            <div id="content">$<%= room.price %></div>
 
             popup = new Popup(
               new google.maps.LatLng(<%= room.latitude %>, <%= room.longitude %>),
