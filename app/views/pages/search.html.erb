@@ -33,8 +33,8 @@
             // });
             //
             // marker.setMap(map);
-            
-            content: "<div id="content">$<%= @room.price %></div>"
+
+            content: "<div id="content">$<%= room.price %></div>"
 
             popup = new Popup(
               new google.maps.LatLng(<%= room.latitude %>, <%= room.longitude %>),
