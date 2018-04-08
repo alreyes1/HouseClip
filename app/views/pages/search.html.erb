@@ -7,10 +7,8 @@
 
       <script>
 
-      var popup, Popup;
-
-      function initMap() {
-        definePopupClass();
+        function initMap() {
+          definePopupClass();
 
           var mapCanvas = document.getElementById('widget');
           var mapOptions = {
@@ -21,7 +19,7 @@
             <% end %>
             zoom: 14,
             mapTypeId: google.maps.MapTypeId.ROADMAP
-          }
+          };
 
           var map = new google.maps.Map(mapCanvas, mapOptions);
 
@@ -29,8 +27,7 @@
 
             <div id="content">$<%= room.price %></div>
 
-            popup = new Popup(
-              new google.maps.LatLng(<%= room.latitude %>, <%= room.longitude %>),
+            var popup = new Popup( new google.maps.LatLng(<%=room.latitude %>, <%= room.longitude %>),
               document.getElementById('content'));
             popup.setMap(map);
           <% end %>
@@ -38,13 +35,7 @@
 
         /** Defines the Popup class. */
 function definePopupClass() {
-  /**
-   * A customized popup on the map.
-   * @param {!google.maps.LatLng} position
-   * @param {!Element} content
-   * @constructor
-   * @extends {google.maps.OverlayView}
-   */
+
   Popup = function(position, content) {
     this.position = position;
 
