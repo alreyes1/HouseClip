@@ -169,6 +169,7 @@
                 });
                 var marker = new google.maps.Marker({
                 position: location, title: "<%= @room.listing_name %>",
+                label: "$ <%= @room.price %>",
                 map: map
                 });
                 var infoWindow = new google.maps.InfoWindow({
