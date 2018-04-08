@@ -2,7 +2,6 @@
 
   <div id="sidebar">
     <div id="widget" class="sticky">
-      <div id="content">$ Hello</div>
 
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1XEDHM32q1GBFywDICjLpca_f8EM9ZWs&callback=initMap">
 
@@ -24,6 +23,7 @@
           var map = new google.maps.Map(mapCanvas, mapOptions);
 
       <% @arrRooms.each do |room| %>
+       content: "<div id="content">$<%= room.price %></div>",
         popup = new Popup(
           new google.maps.LatLng(<%= room.latitude %>, <%= room.longitude %>),
           document.getElementById('content'));
