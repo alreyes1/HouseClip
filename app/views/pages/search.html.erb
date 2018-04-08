@@ -3,7 +3,6 @@
   <div id="sidebar">
     <div id="widget" class="sticky">
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1XEDHM32q1GBFywDICjLpca_f8EM9ZWs&callback=initMap"></script>
-      <div id="map"></div>
       <div id="content">
         Hello world!
       </div>
@@ -13,7 +12,7 @@
         function initMap() {
           definePopupClass();
 
-          var map, popup, Popup;
+          var popup, Popup;
           var mapCanvas = document.getElementById('widget');
           var mapOptions = {
             <% if @arrRooms.length > 0 %>
