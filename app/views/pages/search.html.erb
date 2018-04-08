@@ -11,14 +11,18 @@
       /** Initializes the map and the custom popup. */
       function initMap() {
         definePopupClass();
+          var mapCanvas = document.getElementById('widget');
+          var mapOptions = {
+            <% if @arrRooms.length > 0 %>
+              center: new google.maps.LatLng(<%= @arrRooms[0].latitude %>, <%= @arrRooms[0].longitude %>),
+            <% else %>
+              center: new google.maps.LatLng(33.744939, -84.389858),
+            <% end %>
+            zoom: 14,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+          }
+          var map = new google.maps.Map(mapCanvas, mapOptions);
 
-        map = new google.maps.Map(document.getElementById('widget'), {
-          center: {
-            lat: <%= @arrRooms[0].latitude %>,
-            lng: <%= @arrRooms[0].longitude %>
-          },
-          zoom: 14,
-        });
       <% @arrRooms.each do |room| %>
         popup = new Popup(
           new google.maps.LatLng(<%= room.latitude %>, <%= room.longitude %>),
