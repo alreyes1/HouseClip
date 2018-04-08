@@ -16,21 +16,17 @@
             zoom: 14,
             mapTypeId: google.maps.MapTypeId.ROADMAP
           }
+          
           var map = new google.maps.Map(mapCanvas, mapOptions);
 
           <% @arrRooms.each do |room| %>
-            // var marker = new google.maps.Marker({
-            //   position: new google.maps.LatLng(<%= room.latitude %>, <%= room.longitude %>),
-            //   title: "<%= room.listing_name %>"
-            // });
-            //
-            // marker.setMap(map);
+            var marker = new google.maps.Marker({
+              position: new google.maps.LatLng(<%= room.latitude %>, <%= room.longitude %>),
+              title: "<%= room.listing_name %>",
 
-            var infoWindow = new google.maps.InfoWindow({
-              content: '<div id="content">$<%= room.price %></div>'
             });
-            infoWindow.open(map, marker);
 
+            marker.setMap(map);
           <% end %>
         }
 
