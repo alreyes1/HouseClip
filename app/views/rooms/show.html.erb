@@ -171,7 +171,7 @@
                 position: location, title: "<%= @room.listing_name %>",
                 map: map,
                 animation: google.maps.Animation.DROP,
-                position: {lat: <%= @room.latitude %>, lng: <%= @room.longitude %>}
+                position: {lat: <%= @room.latitude %> - 0.002, lng: <%= @room.longitude %> - 0.002}
                 });
                 marker.addListener('click', toggleBounce);
 
