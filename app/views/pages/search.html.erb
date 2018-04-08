@@ -20,19 +20,17 @@
 
           <% @arrRooms.each do |room| %>
             var marker = new google.maps.Marker({
-              position: new google.maps.LatLng(<%= @room.latitude %>, <%= @room.longitude %>),
-              title: "<%= room.listing_name %>",
-              animation: google.maps.Animation.DROP,
-              position: {lat: <%= @room.latitude %>, lng: <%= @room.longitude %>}
+              position: new google.maps.LatLng(<%= room.latitude %>, <%= room.longitude %>),
+              title: "<%= room.listing_name %>"
             });
 
             marker.setMap(map);
 
             var infoWindow = new google.maps.InfoWindow({
-              content: '<div id="content">$ <%= @rooms.price %></div>'
+              content: '<div id="content"><%= image_tag @room.cover_photo(:thumb) %></div>'
             });
             infoWindow.open(map, marker);
-
+            }
           <% end %>
         }
 
