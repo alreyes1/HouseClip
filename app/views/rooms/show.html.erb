@@ -171,24 +171,15 @@
                 position: location, title: "<%= @room.listing_name %>",
                 map: map,
                 animation: google.maps.Animation.DROP,
-                position: {lat: <%= @room.latitude %> - 0.002, lng: <%= @room.longitude %> - 0.002}
+                position: {lat: <%= @room.latitude %>, lng: <%= @room.longitude %>}
                 });
-                marker.addListener('click', toggleBounce);
 
                 var infoWindow = new google.maps.InfoWindow({
                   content: '<div id="content"><%= image_tag @room.cover_photo(:thumb) %></div>'
                 });
-
+                infoWindow.open(map, marker);
                 }
 
-
-                function toggleBounce() {
-                  if (marker.getAnimation() !== null) {
-                    marker.setAnimation(null);
-                  } else {
-                    marker.setAnimation(google.maps.Animation.BOUNCE);
-                  }
-                }
               </script>
 
           </div>
