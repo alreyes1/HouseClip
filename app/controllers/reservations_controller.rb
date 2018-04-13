@@ -71,7 +71,7 @@ class ReservationsController < ApplicationController
 		def send_sms(room, reservation)
 			@client = Twilio::REST::Client.new
 			@client.messages.create(
-				from: '+14049628760',
+				from: '+14046091280',
 				to: room.user.phone_number,
 				body: "#{reservation.user.fullname} booked your '#{room.listing_name}'"
 			)
