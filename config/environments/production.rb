@@ -59,12 +59,17 @@ Rails.application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
+
   config.action_mailer.default_url_options = { host: 'houseclip.properties' }
+  Rails.application.routes.default_url_options[host:] = 'houseclip.properties'
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+
   config.action_mailer.smtp_settings = {
     address: ENV['MandrillAddress'],
-    port:587,
+    port: 587,
     enable_starttls_auto: true,
     user_name: ENV['Mandrilluser_name'],
     password: ENV['Mandrillpassword'],
