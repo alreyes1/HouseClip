@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :reservations
   has_many :guest_reviews, class_name: "GuestReview", foreign_key: "guest_id"
   has_many :host_reviews, class_name: "HostReview", foreign_key: "host_id"
-  has_many :notifications 
+  has_many :notifications
 
   has_one :setting
   after_create :add_setting
@@ -47,7 +47,7 @@ class User < ActiveRecord::Base
   def send_pin
     @client = Twilio::REST::Client.new
     @client.messages.create(
-      from: '+14049628760',
+      from: '+14046091280',
       to: self.phone_number,
       body: "Your Houseclip phone verification pin is #{self.pin}"
     )
