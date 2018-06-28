@@ -358,7 +358,9 @@ input[type="checkbox"]:checked:before {
   background-size: 100%;
   background-repeat: no-repeat;
 }
-
+.jumbotron h1{
+  font-size: 3.5em;
+}
 //Calendar
 .fc-content.Waiting {
   background-color: #C9CC6D;
