@@ -361,6 +361,27 @@ input[type="checkbox"]:checked:before {
 .jumbotron h1{
   font-size: 3.5em;
 }
+
+.carousel-caption {
+    left: 4%;
+    /* right: 9%; */
+    padding-bottom: 7px;
+    font-size: 1.5em;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 92%;
+    padding-top: 10px;
+}
+@media screen and (min-width: 768px)
+.carousel-caption {
+      left: 2%;
+      right: 9%;
+      padding-bottom: 7px;
+      font-size: 1.5em;
+      background-color: rgba(0, 0, 0, 0.6);
+      width: 96%;
+      padding-top: 10px;
+      margin-bottom: -2%;
+}
 //Calendar
 .fc-content.Waiting {
   background-color: #C9CC6D;
