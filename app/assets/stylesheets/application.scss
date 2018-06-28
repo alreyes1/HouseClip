@@ -364,14 +364,13 @@ input[type="checkbox"]:checked:before {
 
 .carousel-caption {
     left: 4%;
-    /* right: 9%; */
     padding-bottom: 7px;
     font-size: 1.5em;
     background-color: rgba(0, 0, 0, 0.6);
     width: 92%;
     padding-top: 10px;
 }
-@media screen and (min-width: 768px){
+@media screen and (max-width: 768px){
 .carousel-caption {
       left: 2%;
       right: 9%;
