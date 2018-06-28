@@ -354,11 +354,11 @@ input[type="checkbox"]:checked:before {
   width: 80%;
 }
 .jumbotron {
-
   background-image: image-url('heroimage.jpg');
-  
-
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
+
 //Calendar
 .fc-content.Waiting {
   background-color: #C9CC6D;
