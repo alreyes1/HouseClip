@@ -353,7 +353,10 @@ input[type="checkbox"]:checked:before {
   margin-bottom: 50px;
   width: 80%;
 }
-
+.herobanner{
+  width: 100%;
+  background: url(asset_path(“heroimage.jpg”));
+}
 //Calendar
 .fc-content.Waiting {
   background-color: #C9CC6D;
