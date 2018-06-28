@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @rooms = Room.limit(3)
+    @rooms = Room.limit(4)
   end
 
   def search
