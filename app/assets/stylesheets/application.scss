@@ -355,7 +355,9 @@ input[type="checkbox"]:checked:before {
 }
 .herobanner{
   width: 100%;
-  background: url(asset_path(“heroimage.jpg”));
+  background-image: image-url('heroimage.jpg');
+  background-repeat: no-repeat;
+  height: 960px;
 }
 //Calendar
 .fc-content.Waiting {
