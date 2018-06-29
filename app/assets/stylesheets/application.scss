@@ -369,7 +369,7 @@ input[type="checkbox"]:checked:before {
     width: 92%;
     padding-top: 10px;
     top: 148px;
-    margin-bottom: 9px;
+    margin-bottom: 10px;
 }
 
 .house col-xs-6 {
@@ -386,6 +386,10 @@ input[type="checkbox"]:checked:before {
     height: 17em;
 }
 
+.homeh3 {
+  font-size: 3em
+}
+
 @media screen and (max-width: 768px){
 .carousel-caption {
       left: 2%;
@@ -394,7 +398,7 @@ input[type="checkbox"]:checked:before {
       width: 92%;
       padding-top: 10px;
       top: 148px;
-      margin-bottom: 9px;
+      margin-bottom: 10px;
 }
 }
 
