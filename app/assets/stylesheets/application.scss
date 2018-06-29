@@ -373,23 +373,25 @@ input[type="checkbox"]:checked:before {
 @media screen and (max-width: 768px){
 .carousel-caption {
       left: 2%;
-      right: 9%;
-      padding-bottom: 7px;
       font-size: 1.5em;
       background-color: rgba(0, 0, 0, 0.6);
-      width: 96%;
+      width: 92%;
       padding-top: 10px;
-      margin-bottom: -2%;
+      top: 148px;
 }
-.col-xs-6 {
+.house col-xs-6 {
     width: 50%;
     height: 23em;
 }
+.panel-heading.preview img {
+    width: 100%;
+    height: 15em;
+}
 }
 
-.col-md-3 {
+.house col-md-3 {
     width: 25%;
-    height: 23em;
+    height: 17em;
 }
 
 //Calendar
