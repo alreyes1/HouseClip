@@ -1,7 +1,7 @@
 <% @rooms.where(home_type: "Bed & Breakfast").each do |room| %>
   <div class="col-md-3">
     <div class="panel panel-default">
-      <div class="panel-heading preview">
+      <div class="apt panel-heading preview">
         <%= link_to room_path(room) do %>
         <%= image_tag room.cover_photo(:medium) %>
         <% end %>

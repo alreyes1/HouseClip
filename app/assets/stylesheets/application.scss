@@ -388,6 +388,10 @@ input[type="checkbox"]:checked:before {
     width: 100%;
     height: 15em;
 }
+.apt.panel-heading.preview img {
+    width: 100%;
+    height: 24em;
+}
 
 .house col-md-3 {
     width: 25%;
@@ -416,6 +420,10 @@ input[type="checkbox"]:checked:before {
   padding-top: 28px;
   bottom: 7px;
   top: 300px;
+}
+.apt.panel-heading.preview img {
+    width: 100%;
+    height: 24em;
 }
 }
 
