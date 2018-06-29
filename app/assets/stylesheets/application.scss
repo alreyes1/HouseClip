@@ -406,11 +406,7 @@ input[type="checkbox"]:checked:before {
     background-position: center;
     height: 47em;
 }
-.main-footer {
-    height: 3em;
-    padding-top: 2em;
-    margin-bottom: 1em;
-}
+
 @media screen and (max-width: 768px){
 .carousel-caption {
       left: 2%;
@@ -581,8 +577,9 @@ button.Stripe:active {
 
 }
 .main-footer {
-    height: 170px;
-    padding-top: 500px;
+    height: 3em;
+    padding-top: 2em;
+    margin-bottom: 1em;
 }
 
 img.footer_logo {
