@@ -6,7 +6,7 @@
         <%= image_tag room.cover_photo(:medium) %>
         <% end %>
       </div>
-      <div class="panel_body">
+      <div class="carousel-caption">
         <%= link_to room.listing_name, room%> <br>
         $<%= room.price %> - <%= room.home_type %> - <%= pluralize(room.bed_room, "bed") %>
         <div id="star_<%= room.id %>"></div> <%= pluralize(room.average_rating, "review") %>
