@@ -624,21 +624,39 @@ img.footer_logo {
 }
 
 @media only screen and (max-width: 768px) {
-  .carousel-caption {
-        left: 2%;
-        font-size: 1.5em;
-        background-color: rgba(0, 0, 0, 0.6);
-        width: 92%;
-        padding-top: 10px;
-        top: 148px;
-        margin-bottom: 10px;
+  .jumbotron h1 {
+      font-size: 2em;
+      margin-top: -1em;
   }
+  .home_form {
+    width: 80%;
+    margin-top: -1em;
+}
+.homeh3 {
+    font-size: 2.5em;
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+  .carousel-caption {
+        left: 8%;
+        font-size: 1em;
+        background-color: rgba(0,0,0,0.6);
+        width: 84%;
+        padding-top: 3px;
+        top: 7em;
+        margin-bottom: 0px;
+  }
+  .house.panel-heading.preview img {
+      height: 10em;
+}
   .apt.carousel-caption {
       margin-bottom: 0em;
+      width: 92%;
+      left: 4%;
   }
   .apt.panel-heading.preview img {
       width: 100%;
-      height: 19em;
+      height: 14em;
   }
   .discovery-card {
       background-size: cover;
