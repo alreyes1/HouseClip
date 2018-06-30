@@ -411,7 +411,7 @@ input[type="checkbox"]:checked:before {
     height: 47em;
 }
 
-@media screen and (min-width: 331px) and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .carousel-caption {
         left: 2%;
         font-size: 1.5em;
@@ -422,13 +422,7 @@ input[type="checkbox"]:checked:before {
         margin-bottom: 10px;
   }
   .apt.carousel-caption {
-      left: 2%;
-      font-size: 1.5em;
-      background-color: rgba(0,0,0,0.6);
-      width: 96%;
-      padding-top: 14px;
-      bottom: 0px;
-      top: 11em;
+      top: 7em;
       margin-bottom: 0em;
   }
   .apt.panel-heading.preview img {
