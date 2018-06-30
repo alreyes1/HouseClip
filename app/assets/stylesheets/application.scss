@@ -624,6 +624,15 @@ img.footer_logo {
 }
 
 @media only screen and (max-width: 768px) {
+  .navbar-brand>img {
+      margin-top: -7px;
+  }
+  .jumbotron {
+      background-size: 200%;
+      height: 33em;
+      background-position: center;
+  }
+
   .jumbotron h1 {
       font-size: 2em;
       margin-top: -1em;
@@ -643,7 +652,7 @@ img.footer_logo {
         background-color: rgba(0,0,0,0.6);
         width: 84%;
         padding-top: 3px;
-        top: 7em;
+        top: 8em;
         margin-bottom: 0px;
   }
   .house.panel-heading.preview img {
