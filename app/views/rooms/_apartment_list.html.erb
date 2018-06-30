@@ -1,5 +1,5 @@
 <% @rooms.where(home_type: "Apartment").each do |room| %>
-  <div class="col-md-3">
+  <div class="apt col-md-3">
     <div class="panel panel-default">
       <div class="apt panel-heading preview">
         <%= link_to room_path(room) do %>

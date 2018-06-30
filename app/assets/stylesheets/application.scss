@@ -390,14 +390,17 @@ input[type="checkbox"]:checked:before {
 }
 .apt.panel-heading.preview img {
     width: 100%;
-    height: 24em;
+    height: 15em;
 }
 
 .house col-md-3 {
     width: 25%;
     height: 17em;
 }
-
+.apt col-md-3 {
+    width: 25%;
+    height: 17em;
+}
 .homeh3 {
   font-size: 3em
 }
