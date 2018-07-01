@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-3 col-xs-3">
+  <div class="col-md-3 col-md-offset-1 col-xs-3">
     <div class="center">
       <%= image_tag avatar_url(@user), class: "avatar-full"%>
 
@@ -40,22 +40,29 @@
 </div>
 <div class="row">
 
-<div class="col-md-3 col-xs-3">
+<div class="col-md-3 col-md-offset-1 col-xs-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">
     <h4 class="userprofileh4">Reviews From Guests (<%= @guest_reviews.count %>)</h4>
+  </div>
     <div class="row">
       <%= render "reviews/guest_list" %>
     </div>
+  </div>
+
     <br/>
 
-    <h4 class="userprofileh4">Reviews From Hosts (<%= @host_reviews.count %>)</h4>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="userprofileh4">Reviews From Hosts (<%= @host_reviews.count %>)</h4>
+    </div>
     <div class="row">
       <%= render "reviews/host_list" %>
     </div>
-
-
   </div>
+</div>
 
-  <div class="col-md-9 col-xs-9">
+  <div class="col-md-7 col-xs-9">
       <h4 class="userprofileh4">Listings (<%= @rooms.length %>)</h4><br>
 
       <div class="row">
