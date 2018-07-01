@@ -191,7 +191,7 @@
           <% for room in @room.nearbys(10) %>
               <div class="col-md-4 col-xs-12">
                 <div class="panel panel-default">
-                  <div class="apt panel-heading preview">
+                  <div class="room panel-heading preview">
                     <%= link_to room_path(room) do %>
                     <%= image_tag room.cover_photo(:medium) %>
                     <% end %>
