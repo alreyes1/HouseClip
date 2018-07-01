@@ -42,9 +42,9 @@
 
 <div class="col-md-3 col-md-offset-1 col-xs-3">
   <div class="panel panel-default">
-    <div class="panel-heading">
+  
     <h4 class="userprofileh4">Reviews From Guests (<%= @guest_reviews.count %>)</h4>
-  </div>
+
     <div class="row">
       <%= render "reviews/guest_list" %>
     </div>
@@ -53,9 +53,7 @@
     <br/>
 
   <div class="panel panel-default">
-    <div class="panel-heading">
       <h4 class="userprofileh4">Reviews From Hosts (<%= @host_reviews.count %>)</h4>
-    </div>
     <div class="row">
       <%= render "reviews/host_list" %>
     </div>
@@ -70,7 +68,7 @@
      </div>
      <div class="row">
         <%= render partial: "rooms/rooms_list", locals: {rooms: @rooms} %>
-     </div>  
+     </div>
     </div>
 
    </div>
