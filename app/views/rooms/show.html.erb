@@ -1,6 +1,6 @@
     <!-- image -->
     <div class="row">
-      <div class="col-md-10 col-md-offset-1">
+      <div class="col-md-10 col-md-offset-2">
          <%= image_tag @photos[0].image.url(), class: "img-responsive" if @photos.length > 0 %>
 
       </div>
@@ -18,7 +18,7 @@
             <h1><%= @room.listing_name %></h1>
             <%= @room.address %>
           </div>
-          <div class="col-md-4 col-xs-4 text-center">
+          <div class="userimg col-md-4 col-xs-4 text-center">
             <%= link_to user_path(@room.user) do %>
             <%= image_tag avatar_url(@room.user), class: "img-circle avatar-large" %> <br><br>
             <%= @room.user.fullname %>
@@ -92,7 +92,7 @@
 
           <% if @photos.length > 0 %>
 
-          <div class="col-md-10 col-md-offset-1">
+          <div class="col-md-10 col-md-offset-2">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
               <% if @photos %>
@@ -127,7 +127,6 @@
           <% end %>
         </div>
 
-        <br>
         <hr>
 
         <!-- Reviews -->
@@ -142,7 +141,7 @@
             </div>
           </div>
         </div>
-        <br/>
+
         <hr/>
 
 
@@ -190,14 +189,14 @@
         <div class="row">
           <h3>Near by</h3>
           <% for room in @room.nearbys(10) %>
-              <div class="col-md-4 col-xs-4">
+              <div class="col-md-4 col-xs-12">
                 <div class="panel panel-default">
                   <div class="apt panel-heading preview">
                     <%= link_to room_path(room) do %>
                     <%= image_tag room.cover_photo(:medium) %>
                     <% end %>
                   </div>
-                  <div class="apt carousel-caption">
+                  <div class="room carousel-caption">
                     <%= link_to room.listing_name, room %><br/>
                     (<%= room.distance.round(2) %> miles away)
                   </div>
