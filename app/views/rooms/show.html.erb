@@ -10,7 +10,7 @@
     <div class="row">
 
       <!-- LEFT PANEL -->
-      <div class="col-md-8 col-md-offset-1 col-xs-12">
+      <div class="col-md-6 col-md-offset-0 col-xs-12">
 
     <!-- Listing Name -->
      <div class="row">
@@ -31,7 +31,7 @@
 
         <div class="class row text-babu">
             <div class="row text-center row-space-1">
-              <div class="col-md-3 col-md-offset-2 col-xs-3">
+              <div class="col-md-3 col-md-offset-1 col-xs-3">
                 <i class="fa fa-home fa-2x"></i>
               </div>
               <div class="col-md-2 col-xs-3">
@@ -46,7 +46,7 @@
             </div>
 
             <div class="row text-center">
-              <div class="col-md-3 col-md-offset-2 col-xs-3"><%= @room.home_type %></div>
+              <div class="col-md-3 col-md-offset-1 col-xs-3"><%= @room.home_type %></div>
               <div class="col-md-2 col-xs-3"><%= pluralize(@room.accommodate, "Guest") %></div>
               <div class="col-md-2 col-xs-3"><%= pluralize(@room.bed_room, "Bedroom") %></div>
               <div class="col-md-2 col-xs-3"><%= pluralize(@room.bath_room, "Bathroom") %></div>
@@ -131,7 +131,7 @@
 
         <!-- Reviews -->
         <div class="row text-center">
-          <div class="col-md-12 col-xs-12">
+          <div class="col-md-12 col-md-offset-2 col-xs-12">
             <h3>
               <%= pluralize(@guest_reviews.count, "Review") %>
               <span id="average_rating"></span>
@@ -147,7 +147,7 @@
 
         <!-- Google Map -->
          <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-12 col-md-offset-2">
             <div id="map"></div>
             <style>
                 #map {
@@ -186,10 +186,10 @@
         <hr>
 
         <!-- Close by Rooms -->
-        <div class="row">
+        <div class="row text-center">
           <h3>Near by</h3>
           <% for room in @room.nearbys(10) %>
-              <div class="col-md-4 col-xs-12">
+              <div class="col-md-4 col-md-offset-2 col-xs-12">
                 <div class="panel panel-default">
                   <div class="room panel-heading preview">
                     <%= link_to room_path(room) do %>
@@ -207,7 +207,7 @@
     </div>
 
         <!-- Right Panel -->
-        <div class="col-md-4 col-xs-12">
+        <div class="col-md-4 col-md-offset-1 col-xs-12">
           <!-- Reservation Form -->
         <%= render 'reservations/form' %>
         </div>
