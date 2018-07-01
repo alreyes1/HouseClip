@@ -7,7 +7,7 @@
   <% @host_reviews.order(id: :desc).each do |r| %>
     <hr/>
     <div class="row">
-      <div class="col-md-4 col-md-offset-1 col-xs-10 text-center">
+      <div class="col-md-4 col-md-offset-1 col-xs-12 text-center">
         <%= image_tag avatar_url(r.host), class: "img-circle avatar-medium" %><br/><br/>
         <strong><%= r.host.fullname %></strong>
       </div>
