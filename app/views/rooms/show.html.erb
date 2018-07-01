@@ -1,6 +1,6 @@
     <!-- image -->
     <div class="row">
-      <div class="col-md-10 col-md-offset-2">
+      <div class="col-md-10 col-md-offset-1">
          <%= image_tag @photos[0].image.url(), class: "img-responsive" if @photos.length > 0 %>
 
       </div>
@@ -10,11 +10,11 @@
     <div class="row">
 
       <!-- LEFT PANEL -->
-      <div class="col-md-8 col-xs-12">
+      <div class="col-md-8 col-md-offset-1 col-xs-12">
 
     <!-- Listing Name -->
      <div class="row">
-          <div class="col-md-8 col-xs-8">
+          <div class="col-md-6 col-md-offset-2 col-xs-8">
             <h1><%= @room.listing_name %></h1>
             <%= @room.address %>
           </div>
@@ -31,25 +31,25 @@
 
         <div class="class row text-babu">
             <div class="row text-center row-space-1">
-              <div class="col-md-3 col-xs-3">
+              <div class="col-md-3 col-md-offset-2 col-xs-3">
                 <i class="fa fa-home fa-2x"></i>
               </div>
-              <div class="col-md-3 col-xs-3">
+              <div class="col-md-2 col-xs-3">
                 <i class="fa fa-users fa-2x"></i>
               </div>
-              <div class="col-md-3 col-xs-3">
+              <div class="col-md-2 col-xs-3">
                 <i class="fa fa-bed fa-2x"></i>
               </div>
-              <div class="col-md-3 col-xs-3">
+              <div class="col-md-2 col-xs-3">
                 <i class="fa fa-bath fa-2x"></i>
               </div>
             </div>
 
             <div class="row text-center">
-              <div class="col-md-3 col-xs-3"><%= @room.home_type %></div>
-              <div class="col-md-3 col-xs-3"><%= pluralize(@room.accommodate, "Guest") %></div>
-              <div class="col-md-3 col-xs-3"><%= pluralize(@room.bed_room, "Bedroom") %></div>
-              <div class="col-md-3 col-xs-3"><%= pluralize(@room.bath_room, "Bathroom") %></div>
+              <div class="col-md-3 col-md-offset-2 col-xs-3"><%= @room.home_type %></div>
+              <div class="col-md-2 col-xs-3"><%= pluralize(@room.accommodate, "Guest") %></div>
+              <div class="col-md-2 col-xs-3"><%= pluralize(@room.bed_room, "Bedroom") %></div>
+              <div class="col-md-2 col-xs-3"><%= pluralize(@room.bath_room, "Bathroom") %></div>
             </div>
         </div>
         <hr>
@@ -65,19 +65,19 @@
 
         <!-- Amenities -->
         <div class="row text-center">
-          <div class="col-md-3 col-xs-3">
+          <div class="col-md-3 col-md-offset-1 col-xs-3">
             <h4>Amenities</h4>
           </div>
           <div class="col-md-9 col-xs-9">
             <div class="row">
-              <div class="col-md-6 col-xs-6">
+              <div class="col-md-9 col-xs-6">
                 <ul class="amenities">
                   <li class="<%= 'text-line-through' if !@room.is_tv %>">TV</li>
                   <li class="<%= 'text-line-through' if !@room.is_kitchen %>">Kitchen</li>
                   <li class="<%= 'text-line-through' if !@room.is_internet %>">Internet</li>
                 </ul>
               </div>
-              <div class="col-md-6 col-xs-6">
+              <div class="col-md-3 col-xs-6">
                 <li class="<%= 'text-line-through' if !@room.is_heating %>">Heating</li>
                 <li class="<%= 'text-line-through' if !@room.is_air %>">Air Conditioning</li>
 
