@@ -336,6 +336,11 @@ input[type="checkbox"]:checked:before {
 }
 
 //HOME PAGE
+
+.homepadding.container-fluid {
+  padding-left: 7em;
+  padding-right: 7em;
+}
 .discovery-card {
   background-size: cover;
   background-position: center;
