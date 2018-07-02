@@ -15,16 +15,16 @@
 
         <% @trips.each do |trip| %>
           <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-2 col-xs-6">
               <%= trip.start_date.strftime('%v') %>
               <p><%= trip.status %></p>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-xs-6">
               <%= link_to room_path(trip.room) do %>
                 <%= image_tag trip.room.cover_photo(:thumb) %>
               <% end %>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5 col-xs-6">
               <%= link_to trip.room.listing_name, room_path(trip.room) %><br/><br/>
               <span>
                 <%= image_tag avatar_url(trip.room.user), class: "img-circle avatar-small" %>
@@ -33,7 +33,7 @@
                 <% end %>
               </span>
             </div>
-            <div class="col-md-3 text-right">
+            <div class="col-md-3 col-xs-6 text-right">
               <%= render partial: "reviews/guest_form", locals: {reservation: trip} if trip.Approved? %>
             </div>
           </div>
