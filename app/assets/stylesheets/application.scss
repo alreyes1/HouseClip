@@ -777,12 +777,20 @@ img.footer_logo {
   padding-bottom: 8px;
 }
 .dashboardh2{
-  font-size: 1em;
+  font-size: 14px;
+    margin-top: 6px;
 }
 .dashboard.panel-heading{
   padding-left: 6px;
   padding-bottom: 6px;
+  padding-right: 0px;
 }
-
+.dashboardavatar {
+  margin-top: 0em;
+  -webkit-border-radius: 14%;
+  -moz-border-radius: 14%;
+  border-radius: 14%;
+  border: 2px solid #fff;
+}
 
 }
