@@ -362,7 +362,7 @@ input[type="checkbox"]:checked:before {
   width: 80%;
 }
 .jumbotron {
-  background-image: image-url('heroimage.jpg');
+  background-image:url(asset-path('heroimage.jpg'));
   background-size: 100%;
   background-repeat: no-repeat;
 }
