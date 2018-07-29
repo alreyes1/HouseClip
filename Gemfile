@@ -43,7 +43,7 @@ gem 'rails-assets-card', source: 'https://rails-assets.org'
 gem 'omniauth-stripe-connect', '~> 2.10.0'
 
 gem 'chartkick', '~> 2.2.4'
-gem 'redis', '= 3.3.3'
+gem 'redis', '~> 4.0'
 
 
 group :development, :test do
