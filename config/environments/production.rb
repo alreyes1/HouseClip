@@ -118,4 +118,7 @@ Rails.application.configure do
   #ActionCable set up
   config.web_socket_server_url = "wss://houseclip.properties/cable"
   config.action_cable.allowed_request_origins = "https://houseclip.properties"
+
+  config.action_cable.url = "wss://houseclip.properties/cable"
+
 end
