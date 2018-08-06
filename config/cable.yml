@@ -6,8 +6,8 @@ development: &development
   :inline: true
 test: *development
 production: &production
-  :url: redis://h:p0ee4458bbafc025d1f8e5a99f54bd9580626fc51049bfa93e4f87cec3e45bfa9@ec2-54-85-101-85.compute-1.amazonaws.com:53679
+  :url: redis://h:p0ee4458bbafc025d1f8e5a99f54bd9580626fc51049bfa93e4f87cec3e45bfa9@ec2-54-85-101-85.compute-1.amazonaws.com:6380
   :host: ec2-54-85-101-85.compute-1.amazonaws.com
-  :port: 53679
+  :port: 6380
   :password: p0ee4458bbafc025d1f8e5a99f54bd9580626fc51049bfa93e4f87cec3e45bfa9
   :inline: true
