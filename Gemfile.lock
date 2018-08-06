@@ -309,7 +309,7 @@ DEPENDENCIES
   paperclip
   pg (~> 0.18)
   private_pub
-  puma (~> 3.12.0)
+  puma (~> 3.12)
   rails (~> 5.1, >= 5.1.6)
   rails-assets-card!
   ransack
