@@ -61,4 +61,13 @@ def is_active_host
   !self.merchant_id.blank?
 
 end
+
+protected
+def confirmation_required?
+  false
+end
+
+
+
+
 end
